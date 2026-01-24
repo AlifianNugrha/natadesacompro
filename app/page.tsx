@@ -600,65 +600,91 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Mitra & Klien Section - Marquee Effect */}
-        <section className="py-16 bg-white overflow-hidden">
+        {/* Mitra & Klien Section - 14 Logo (7 Atas, 7 Bawah) Full Color */}
+        <section className="py-20 bg-white overflow-hidden">
           <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="text-center mb-12 reveal d-1">
+            <div className="text-center mb-16 reveal d-1">
               <h2 className="text-3xl font-bold mb-4 text-balance text-slate-900">Mitra & Klien</h2>
               <p className="text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                Dipercaya oleh berbagai institusi and organisasi terkemuka
+                Dipercaya oleh berbagai institusi dan organisasi terkemuka
               </p>
             </div>
 
-            {/* Marquee Container */}
-            <div className="relative flex overflow-x-hidden">
-              <div className="flex animate-marquee whitespace-nowrap items-center py-4">
+            {/* Baris 1: Bergerak ke Kiri (7 Logo) */}
+            <div className="relative flex overflow-x-hidden mb-12">
+              <div className="flex animate-marquee whitespace-nowrap items-center">
                 {[
-                  { name: "BUM Desa Tirta Mandiri", src: "/logo-bumdes.png" },
-                  { name: "Unsoed", src: "/logo-unsoed.png" },
-                  { name: "Polnes", src: "/logo-polnes.png" },
-                  { name: "UNSA", src: "/logo-unsa.png" },
-                  { name: "Dolan Kreasi", src: "/logo-dolan.png" },
-                  { name: "Kemendesa", src: "/logo-kemendesa.png" },
-                  { name: "Pemda", src: "/logo-pemda.png" },
-                  { name: "BUMDes", src: "/logo-bumdes-nasional.png" },
+                  { name: "BNI", src: "/BNI.png" },
+                  { name: "PT Dolan Kreasi Indonesia", src: "/DOLAN.png" },
+                  { name: "Agriculture Companies", src: "/AGRICOMP.png" },
+                  { name: "PT Dua Kawan Digital", src: "/DEKADE.png" },
+                  { name: "UNISA", src: "/UNISA.png" },
+                  { name: "BUM Des Tirta Mandiri", src: "/TIRTAMANDIRI.png" },
+                  { name: "Biofertilizer EXTRAGEN", src: "/EXTRAGEN.png" },
                 ].map((client, i) => (
-                  <div key={i} className="mx-8 flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                  <div key={`r1-${i}`} className="mx-12 flex flex-col items-center justify-center">
                     <div className="h-16 w-32 relative mb-2 flex items-center justify-center">
-                      <Image
-                        src={client.src}
-                        alt={client.name}
-                        width={120}
-                        height={60}
-                        className="object-contain"
-                      />
+                      <Image src={client.src} alt={client.name} width={120} height={60} className="object-contain" />
                     </div>
                     <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">{client.name}</p>
                   </div>
                 ))}
               </div>
 
-              {/* Duplicate for seamless loop */}
-              <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap items-center py-4">
+              <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap items-center">
                 {[
-                  { name: "BUM Desa Tirta Mandiri", src: "/logo-bumdes.png" },
-                  { name: "Unsoed", src: "/logo-unsoed.png" },
-                  { name: "Polnes", src: "/logo-polnes.png" },
-                  { name: "UNSA", src: "/logo-unsa.png" },
-                  { name: "Dolan Kreasi", src: "/logo-dolan.png" },
-                  { name: "Kemendesa", src: "/logo-kemendesa.png" },
-                  { name: "Pemda", src: "/logo-pemda.png" },
-                  { name: "BUMDes", src: "/logo-bumdes-nasional.png" },
+                  { name: "BNI", src: "/BNI.png" },
+                  { name: "PT Dolan Kreasi Indonesia", src: "/DOLAN.png" },
+                  { name: "Agriculture Companies", src: "/AGRICOMP.png" },
+                  { name: "PT Dua Kawan Digital", src: "/DEKADE.png" },
+                  { name: "UNISA", src: "/UNISA.png" },
+                  { name: "BUM Des Tirta Mandiri", src: "/TIRTAMANDIRI.png" },
+                  { name: "Biofertilizer EXTRAGEN", src: "/EXTRAGEN.png" },
                 ].map((client, i) => (
-                  <div key={`dup-${i}`} className="mx-8 flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                  <div key={`r1-dup-${i}`} className="mx-12 flex flex-col items-center justify-center">
                     <div className="h-16 w-32 relative mb-2 flex items-center justify-center">
-                      <Image
-                        src={client.src}
-                        alt={client.name}
-                        width={120}
-                        height={60}
-                        className="object-contain"
-                      />
+                      <Image src={client.src} alt={client.name} width={120} height={60} className="object-contain" />
+                    </div>
+                    <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">{client.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Baris 2: Bergerak ke Kanan (7 Logo) */}
+            <div className="relative flex overflow-x-hidden">
+              <div className="flex animate-marquee-reverse whitespace-nowrap items-center">
+                {[
+                  { name: "BUMDes", src: "/logo-bumdes-nasional.png" },
+                  { name: "Biofertilizer Extragen", src: "/EXTRAGEN.png" },
+                  { name: "UPN Samarinda", src: "/UPNS.png" },
+                  { name: "Delanggu ECO Park", src: "/DELANGGUECO.png" },
+                  { name: "Konten Keren", src: "/KOKE.png" },
+                  { name: "Kedung Sumber", src: "/KEDUNG.png" },
+                  { name: "BSI", src: "/BSI.png" },
+                ].map((client, i) => (
+                  <div key={`r2-${i}`} className="mx-12 flex flex-col items-center justify-center">
+                    <div className="h-16 w-32 relative mb-2 flex items-center justify-center">
+                      <Image src={client.src} alt={client.name} width={120} height={60} className="object-contain" />
+                    </div>
+                    <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">{client.name}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="absolute top-0 flex animate-marquee-reverse2 whitespace-nowrap items-center">
+                {[
+                  { name: "UPNS", src: "/UPNS.png" },
+                  { name: "Delanggu Eco Park", src: "/DELANGGUECO.png" },
+                  { name: "Konten Keren", src: "/KOKE.png" },
+                  { name: "PT Kedung Sumber Panguripan", src: "/KEDUNG.png" },
+                  { name: "Bank Syariah Indonesia", src: "/BSI.png" },
+                  { name: " CV Energi Dagang Anak Negeri", src: "/ENERGIDAGANG.png" },
+                  { name: "Orra Narupa", src: "/ORRA.png" },
+                ].map((client, i) => (
+                  <div key={`r2-dup-${i}`} className="mx-12 flex flex-col items-center justify-center">
+                    <div className="h-16 w-32 relative mb-2 flex items-center justify-center">
+                      <Image src={client.src} alt={client.name} width={120} height={60} className="object-contain" />
                     </div>
                     <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">{client.name}</p>
                   </div>
@@ -667,7 +693,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* CSS untuk Animasi Marquee - Tambahkan ini di global.css Anda atau dalam tag style */}
           <style jsx global>{`
     @keyframes marquee {
       0% { transform: translateX(0%); }
@@ -677,37 +702,19 @@ export default function HomePage() {
       0% { transform: translateX(100%); }
       100% { transform: translateX(0%); }
     }
-    .animate-marquee {
-      animation: marquee 30s linear infinite;
+    @keyframes marquee-reverse {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0%); }
     }
-    .animate-marquee2 {
-      animation: marquee2 30s linear infinite;
+    @keyframes marquee-reverse2 {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(100%); }
     }
+    .animate-marquee { animation: marquee 40s linear infinite; }
+    .animate-marquee2 { animation: marquee2 40s linear infinite; }
+    .animate-marquee-reverse { animation: marquee-reverse 40s linear infinite; }
+    .animate-marquee-reverse2 { animation: marquee-reverse2 40s linear infinite; }
   `}</style>
-        </section>
-
-        {/* Testimonial Section */}
-        <section className="py-16 bg-primary/5">
-          <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center reveal d-1">
-              <div className="mb-6">
-                <svg className="h-12 w-12 mx-auto text-primary opacity-50" fill="currentColor" viewBox="0 0 32 32">
-                  <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-                </svg>
-              </div>
-              <blockquote className="text-xl font-medium text-foreground mb-6 leading-relaxed reveal d-2">
-                "Berkat pendampingan Natadesa Nusantara, desa kami berhasil meningkatkan pendapatan dari sektor
-                pariwisata hingga 300% dalam setahun. Platform bisnisdesa.id sangat membantu dalam mengelola reservasi
-                and keuangan."
-              </blockquote>
-              <div className="flex items-center justify-center gap-4 reveal d-3">
-                <div className="text-center">
-                  <p className="font-bold">Pak Budi Santoso</p>
-                  <p className="text-sm text-muted-foreground">Direktur BUMDes Tirta Mandiri, Klaten</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* CTA Section */}

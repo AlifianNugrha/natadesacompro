@@ -432,124 +432,258 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Portfolio Highlights Section */}
-        <section className="py-16">
+        {/* Portfolio Highlights Section - Background Hijau #172317, 4 Cards Kecil */}
+        <section className="py-16 bg-[#172317]">
           <div className="container mx-auto max-w-7xl px-6 lg:px-8">
             <div className="text-center mb-12 reveal d-1">
-              <h2 className="text-3xl font-bold mb-4 text-balance">Portfolio Highlights</h2>
-              <p className="text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">Proyek-proyek unggulan yang telah kami kerjakan</p>
+              <h2 className="text-3xl font-bold mb-4 text-balance text-white">Portfolio Highlights</h2>
+              <p className="text-slate-300 text-pretty max-w-2xl mx-auto leading-relaxed">
+                Proyek-proyek unggulan yang telah kami kerjakan
+              </p>
             </div>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="overflow-hidden reveal d-1">
-                <div className="aspect-video relative"><Image src="/ponggok-fish-farm-sustainable-village.jpg" alt="Ponggok" fill className="object-cover" /></div>
-                <CardContent className="pt-6">
-                  <Badge className="mb-3">Jawa Tengah</Badge>
-                  <h3 className="text-xl font-bold mb-2">Ponggok Fish & Farm</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">Pengembangan desa wisata berbasis perikanan and pertanian berkelanjutan di Klaten.</p>
-                  <p className="text-sm text-primary font-semibold">2023-2024</p>
+
+            {/* Grid diubah ke 4 kolom untuk mengecilkan ukuran card */}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {/* Card 1 */}
+              <Card className="overflow-hidden reveal d-1 border-none bg-white shadow-lg">
+                <div className="aspect-video relative">
+                  <Image src="/ponggok-fish-farm-sustainable-village.jpg" alt="Ponggok" fill className="object-cover" />
+                </div>
+                <CardContent className="pt-5 bg-white">
+                  <Badge className="mb-2 bg-[#172317]/10 text-[#172317] hover:bg-[#172317]/20 border-none text-[10px]">Jawa Tengah</Badge>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900 leading-tight">Ponggok Fish & Farm</h3>
+                  <p className="text-slate-600 mb-4 text-xs leading-relaxed">
+                    Pengembangan desa wisata berbasis perikanan dan pertanian berkelanjutan.
+                  </p>
+                  <p className="text-[11px] font-bold text-[#172317]">2023-2024</p>
                 </CardContent>
               </Card>
-              <Card className="overflow-hidden reveal d-2">
-                <div className="aspect-video relative"><Image src="/delanggu-eco-park-sustainable-tourism.jpg" alt="Delanggu" fill className="object-cover" /></div>
-                <CardContent className="pt-6">
-                  <Badge className="mb-3">Jawa Tengah</Badge>
-                  <h3 className="text-xl font-bold mb-2">Delanggu Eco Park</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">Transformasi area hijau menjadi destinasi ekowisata edukasi dengan fasilitas modern.</p>
-                  <p className="text-sm text-primary font-semibold">2022-2023</p>
+
+              {/* Card 2 */}
+              <Card className="overflow-hidden reveal d-2 border-none bg-white shadow-lg">
+                <div className="aspect-video relative">
+                  <Image src="/delanggu-eco-park-sustainable-tourism.jpg" alt="Delanggu" fill className="object-cover" />
+                </div>
+                <CardContent className="pt-5 bg-white">
+                  <Badge className="mb-2 bg-[#172317]/10 text-[#172317] hover:bg-[#172317]/20 border-none text-[10px]">Jawa Tengah</Badge>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900 leading-tight">Delanggu Eco Park</h3>
+                  <p className="text-slate-600 mb-4 text-xs leading-relaxed">
+                    Transformasi area hijau menjadi destinasi ekowisata edukasi modern.
+                  </p>
+                  <p className="text-[11px] font-bold text-[#172317]">2022-2023</p>
                 </CardContent>
               </Card>
-              <Card className="overflow-hidden reveal d-3">
-                <div className="aspect-video relative"><Image src="/situ-salawe-lake-tourism-destination.jpg" alt="Situ Salawe" fill className="object-cover" /></div>
-                <CardContent className="pt-6">
-                  <Badge className="mb-3">Jawa Barat</Badge>
-                  <h3 className="text-xl font-bold mb-2">Situ Salawe</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">Revitalisasi danau and pengembangan kawasan wisata alam dengan konsep ramah lingkungan.</p>
-                  <p className="text-sm text-primary font-semibold">2023</p>
+
+              {/* Card 3 */}
+              <Card className="overflow-hidden reveal d-3 border-none bg-white shadow-lg">
+                <div className="aspect-video relative">
+                  <Image src="/situ-salawe-lake-tourism-destination.jpg" alt="Situ Salawe" fill className="object-cover" />
+                </div>
+                <CardContent className="pt-5 bg-white">
+                  <Badge className="mb-2 bg-[#172317]/10 text-[#172317] hover:bg-[#172317]/20 border-none text-[10px]">Jawa Barat</Badge>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900 leading-tight">Situ Salawe</h3>
+                  <p className="text-slate-600 mb-4 text-xs leading-relaxed">
+                    Revitalisasi danau dan pengembangan kawasan wisata alam ramah lingkungan.
+                  </p>
+                  <p className="text-[11px] font-bold text-[#172317]">2023</p>
+                </CardContent>
+              </Card>
+
+              {/* Card 4 (Tambahan agar jadi 4) */}
+              <Card className="overflow-hidden reveal d-4 border-none bg-white shadow-lg">
+                <div className="aspect-video relative">
+                  <Image src="/situ-salawe-lake-tourism-destination.jpg" alt="Desa Wisata" fill className="object-cover" />
+                </div>
+                <CardContent className="pt-5 bg-white">
+                  <Badge className="mb-2 bg-[#172317]/10 text-[#172317] hover:bg-[#172317]/20 border-none text-[10px]">Bali</Badge>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900 leading-tight">Ubud Sustainable</h3>
+                  <p className="text-slate-600 mb-4 text-xs leading-relaxed">
+                    Pendampingan manajemen limbah dan energi terbarukan di kawasan wisata.
+                  </p>
+                  <p className="text-[11px] font-bold text-[#172317]">2024</p>
                 </CardContent>
               </Card>
             </div>
-            <div className="text-center mt-8 reveal d-4">
-              <Button variant="outline" size="lg" asChild>
+
+            <div className="text-center mt-12 reveal d-5">
+              {/* Perbaikan Button: Memaksa teks putih dan border terlihat */}
+              <Button
+                variant="outline"
+                size="lg"
+                asChild
+                className="border-white text-white hover:bg-white hover:text-[#172317] transition-all bg-transparent"
+              >
                 <Link href="/portfolio">Lihat Semua Portfolio →</Link>
               </Button>
             </div>
           </div>
         </section>
 
-        {/* Keunggulan Kompetitif Section */}
-        <section className="py-16 bg-muted/30">
+        {/* Keunggulan Kompetitif Section - Susunan 3-3 & Aksen Hijau #172317 */}
+        <section className="py-16 bg-white">
           <div className="container mx-auto max-w-7xl px-6 lg:px-8">
             <div className="text-center mb-12 reveal d-1">
-              <h2 className="text-3xl font-bold mb-4 text-balance">Keunggulan Kompetitif</h2>
-              <p className="text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">Mengapa memilih Natadesa Nusantara sebagai mitra pengembangan desa</p>
+              <h2 className="text-3xl font-bold mb-4 text-balance text-slate-900">Keunggulan Kompetitif</h2>
+              <p className="text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
+                Mengapa memilih Natadesa Nusantara sebagai mitra pengembangan desa
+              </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="reveal d-1">
-                <CardContent className="pt-6">
-                  <CheckCircle className="h-10 w-10 mb-4 text-primary" />
-                  <h3 className="text-lg font-bold mb-2">Solusi Khusus</h3>
-                  <p className="text-muted-foreground leading-relaxed">Pendekatan customized sesuai karakteristik and potensi unik setiap desa.</p>
+
+            {/* Menggunakan grid-cols-3 untuk susunan 3-3 yang seimbang */}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+              {/* Card 1 */}
+              <Card className="reveal d-1 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+                <CardContent className="p-5"> {/* Padding diperkecil agar card tampak ringkas */}
+                  <CheckCircle className="h-7 w-7 mb-3 text-[#172317]" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900">Solusi Khusus</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    Pendekatan customized sesuai karakteristik and potensi unik setiap desa.
+                  </p>
                 </CardContent>
               </Card>
-              <Card className="reveal d-2">
-                <CardContent className="pt-6">
-                  <Copy className="h-10 w-10 mb-4 text-primary" />
-                  <h3 className="text-lg font-bold mb-2">Model Replikasi</h3>
-                  <p className="text-muted-foreground leading-relaxed">Framework teruji yang dapat diadaptasi untuk berbagai konteks desa di Indonesia.</p>
+
+              {/* Card 2 */}
+              <Card className="reveal d-2 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+                <CardContent className="p-5">
+                  <Copy className="h-7 w-7 mb-3 text-[#172317]" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900">Model Replikasi</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    Framework teruji yang dapat diadaptasi untuk berbagai konteks desa di Indonesia.
+                  </p>
                 </CardContent>
               </Card>
-              <Card className="reveal d-3">
-                <CardContent className="pt-6">
-                  <Smartphone className="h-10 w-10 mb-4 text-primary" />
-                  <h3 className="text-lg font-bold mb-2">Integrasi Digital</h3>
-                  <p className="text-muted-foreground leading-relaxed">Platform teknologi bisnisdesa.id untuk operasional and pemasaran yang efisien.</p>
+
+              {/* Card 3 */}
+              <Card className="reveal d-3 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+                <CardContent className="p-5">
+                  <Smartphone className="h-7 w-7 mb-3 text-[#172317]" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900">Integrasi Digital</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    Platform teknologi bisnisdesa.id untuk operasional and pemasaran yang efisien.
+                  </p>
                 </CardContent>
               </Card>
-              <Card className="reveal d-1">
-                <CardContent className="pt-6">
-                  <Handshake className="h-10 w-10 mb-4 text-primary" />
-                  <h3 className="text-lg font-bold mb-2">Kemitraan Strategis</h3>
-                  <p className="text-muted-foreground leading-relaxed">Jaringan luas dengan pemerintah, universitas, and sektor swasta untuk keberlanjutan.</p>
+
+              {/* Card 4 */}
+              <Card className="reveal d-1 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+                <CardContent className="p-5">
+                  <Handshake className="h-7 w-7 mb-3 text-[#172317]" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900">Kemitraan Strategis</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    Jaringan luas dengan pemerintah, universitas, and sektor swasta untuk keberlanjutan.
+                  </p>
                 </CardContent>
               </Card>
-              <Card className="reveal d-2">
-                <CardContent className="pt-6">
-                  <UserCheck className="h-10 w-10 mb-4 text-primary" />
-                  <h3 className="text-lg font-bold mb-2">Keterlibatan Komunitas</h3>
-                  <p className="text-muted-foreground leading-relaxed">Pendekatan partisipatif yang memberdayakan masyarakat sebagai aktor utama pembangunan.</p>
+
+              {/* Card 5 */}
+              <Card className="reveal d-2 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+                <CardContent className="p-5">
+                  <UserCheck className="h-7 w-7 mb-3 text-[#172317]" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900">Keterlibatan Komunitas</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    Pendekatan partisipatif yang memberdayakan masyarakat sebagai aktor utama pembangunan.
+                  </p>
                 </CardContent>
               </Card>
-              <Card className="reveal d-3">
-                <CardContent className="pt-6">
-                  <Award className="h-10 w-10 mb-4 text-primary" />
-                  <h3 className="text-lg font-bold mb-2">Track Record Terbukti</h3>
-                  <p className="text-muted-foreground leading-relaxed">20+ proyek sukses dengan dampak nyata bagi ekonomi and masyarakat desa.</p>
+
+              {/* Card 6 */}
+              <Card className="reveal d-3 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+                <CardContent className="p-5">
+                  <Award className="h-7 w-7 mb-3 text-[#172317]" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900">Track Record Terbukti</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    20+ proyek sukses dengan dampak nyata bagi ekonomi and masyarakat desa.
+                  </p>
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
 
-        {/* Mitra & Klien Section */}
-        <section className="py-16">
+        {/* Mitra & Klien Section - Marquee Effect */}
+        <section className="py-16 bg-white overflow-hidden">
           <div className="container mx-auto max-w-7xl px-6 lg:px-8">
             <div className="text-center mb-12 reveal d-1">
-              <h2 className="text-3xl font-bold mb-4 text-balance">Mitra & Klien</h2>
-              <p className="text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">Dipercaya oleh berbagai institusi and organisasi terkemuka</p>
+              <h2 className="text-3xl font-bold mb-4 text-balance text-slate-900">Mitra & Klien</h2>
+              <p className="text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
+                Dipercaya oleh berbagai institusi and organisasi terkemuka
+              </p>
             </div>
-            <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
-              {[
-                "BUM Desa Tirta Mandiri", "Universitas Jenderal Soedirman",
-                "Politeknik Negeri Samarinda", "Universitas Surakarta",
-                "PT. Dolan Kreasi Indonesia", "Kementerian Desa PDTT",
-                "Pemerintah Daerah", "BUMDes Se-Indonesia"
-              ].map((client, i) => (
-                <div key={i} className={`flex items-center justify-center p-6 bg-muted/30 rounded-lg reveal d-${(i % 4) + 1}`}>
-                  <p className="text-center font-semibold text-sm">{client}</p>
-                </div>
-              ))}
+
+            {/* Marquee Container */}
+            <div className="relative flex overflow-x-hidden">
+              <div className="flex animate-marquee whitespace-nowrap items-center py-4">
+                {[
+                  { name: "BUM Desa Tirta Mandiri", src: "/logo-bumdes.png" },
+                  { name: "Unsoed", src: "/logo-unsoed.png" },
+                  { name: "Polnes", src: "/logo-polnes.png" },
+                  { name: "UNSA", src: "/logo-unsa.png" },
+                  { name: "Dolan Kreasi", src: "/logo-dolan.png" },
+                  { name: "Kemendesa", src: "/logo-kemendesa.png" },
+                  { name: "Pemda", src: "/logo-pemda.png" },
+                  { name: "BUMDes", src: "/logo-bumdes-nasional.png" },
+                ].map((client, i) => (
+                  <div key={i} className="mx-8 flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                    <div className="h-16 w-32 relative mb-2 flex items-center justify-center">
+                      <Image
+                        src={client.src}
+                        alt={client.name}
+                        width={120}
+                        height={60}
+                        className="object-contain"
+                      />
+                    </div>
+                    <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">{client.name}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Duplicate for seamless loop */}
+              <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap items-center py-4">
+                {[
+                  { name: "BUM Desa Tirta Mandiri", src: "/logo-bumdes.png" },
+                  { name: "Unsoed", src: "/logo-unsoed.png" },
+                  { name: "Polnes", src: "/logo-polnes.png" },
+                  { name: "UNSA", src: "/logo-unsa.png" },
+                  { name: "Dolan Kreasi", src: "/logo-dolan.png" },
+                  { name: "Kemendesa", src: "/logo-kemendesa.png" },
+                  { name: "Pemda", src: "/logo-pemda.png" },
+                  { name: "BUMDes", src: "/logo-bumdes-nasional.png" },
+                ].map((client, i) => (
+                  <div key={`dup-${i}`} className="mx-8 flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                    <div className="h-16 w-32 relative mb-2 flex items-center justify-center">
+                      <Image
+                        src={client.src}
+                        alt={client.name}
+                        width={120}
+                        height={60}
+                        className="object-contain"
+                      />
+                    </div>
+                    <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">{client.name}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+
+          {/* CSS untuk Animasi Marquee - Tambahkan ini di global.css Anda atau dalam tag style */}
+          <style jsx global>{`
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes marquee2 {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0%); }
+    }
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+    .animate-marquee2 {
+      animation: marquee2 30s linear infinite;
+    }
+  `}</style>
         </section>
 
         {/* Testimonial Section */}

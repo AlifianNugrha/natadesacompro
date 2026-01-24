@@ -356,7 +356,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Layanan Utama Section - Background Putih #ffffff dengan Aksen Hijau #172317 */}
+        {/* Layanan Utama Section - White Card, Lift-up & Font Kuning */}
         <section className="py-16 bg-white">
           <div className="container mx-auto max-w-7xl px-6 lg:px-8">
             <div className="text-center mb-12 reveal d-1">
@@ -370,60 +370,60 @@ export default function HomePage() {
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {/* Card 1 */}
-              <Card className="reveal d-1 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+              <Card className="reveal d-1 border border-slate-100 shadow-sm bg-white group transition-all duration-200 ease-out hover:-translate-y-3 hover:shadow-xl cursor-default">
                 <CardContent className="pt-8">
-                  <div className="bg-[#172317]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                    <FileText className="h-10 w-10 text-[#172317]" />
+                  <div className="bg-[#172317]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-200 group-hover:bg-yellow-500/10">
+                    <FileText className="h-10 w-10 text-[#172317] transition-colors duration-200 group-hover:text-yellow-500" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-slate-900">
+                  <h3 className="text-xl font-bold mb-3 text-slate-900 transition-colors duration-200 group-hover:text-yellow-600">
                     Rencana Jangka Panjang Desa
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed transition-colors duration-200 group-hover:text-slate-600">
                     Penyusunan masterplan dan strategi pengembangan desa wisata yang berkelanjutan dan terukur.
                   </p>
                 </CardContent>
               </Card>
 
               {/* Card 2 */}
-              <Card className="reveal d-2 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+              <Card className="reveal d-2 border border-slate-100 shadow-sm bg-white group transition-all duration-200 ease-out hover:-translate-y-3 hover:shadow-xl cursor-default">
                 <CardContent className="pt-8">
-                  <div className="bg-[#172317]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                    <GraduationCap className="h-10 w-10 text-[#172317]" />
+                  <div className="bg-[#172317]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-200 group-hover:bg-yellow-500/10">
+                    <GraduationCap className="h-10 w-10 text-[#172317] transition-colors duration-200 group-hover:text-yellow-500" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-slate-900">
+                  <h3 className="text-xl font-bold mb-3 text-slate-900 transition-colors duration-200 group-hover:text-yellow-600">
                     Peningkatan Kapasitas HR
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed transition-colors duration-200 group-hover:text-slate-600">
                     Pelatihan SDM desa dalam manajemen, pemasaran, dan operasional bisnis pariwisata.
                   </p>
                 </CardContent>
               </Card>
 
               {/* Card 3 */}
-              <Card className="reveal d-3 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+              <Card className="reveal d-3 border border-slate-100 shadow-sm bg-white group transition-all duration-200 ease-out hover:-translate-y-3 hover:shadow-xl cursor-default">
                 <CardContent className="pt-8">
-                  <div className="bg-[#172317]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                    <Laptop className="h-10 w-10 text-[#172317]" />
+                  <div className="bg-[#172317]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-200 group-hover:bg-yellow-500/10">
+                    <Laptop className="h-10 w-10 text-[#172317] transition-colors duration-200 group-hover:text-yellow-500" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-slate-900">
+                  <h3 className="text-xl font-bold mb-3 text-slate-900 transition-colors duration-200 group-hover:text-yellow-600">
                     Digitalisasi dan Teknologi
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed transition-colors duration-200 group-hover:text-slate-600">
                     Implementasi sistem digital untuk reservasi, pembayaran, dan manajemen operasional desa.
                   </p>
                 </CardContent>
               </Card>
 
               {/* Card 4 */}
-              <Card className="reveal d-4 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+              <Card className="reveal d-4 border border-slate-100 shadow-sm bg-white group transition-all duration-200 ease-out hover:-translate-y-3 hover:shadow-xl cursor-default">
                 <CardContent className="pt-8">
-                  <div className="bg-[#172317]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                    <Briefcase className="h-10 w-10 text-[#172317]" />
+                  <div className="bg-[#172317]/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-200 group-hover:bg-yellow-500/10">
+                    <Briefcase className="h-10 w-10 text-[#172317] transition-colors duration-200 group-hover:text-yellow-500" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-slate-900">
+                  <h3 className="text-xl font-bold mb-3 text-slate-900 transition-colors duration-200 group-hover:text-yellow-600">
                     Bantuan Manajemen Bisnis
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed transition-colors duration-200 group-hover:text-slate-600">
                     Pendampingan dalam pengelolaan keuangan, operasional, dan pengembangan produk wisata desa.
                   </p>
                 </CardContent>
@@ -519,7 +519,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Keunggulan Kompetitif Section - Susunan 3-3 & Aksen Hijau #172317 */}
+        {/* Keunggulan Kompetitif Section - Instant Lift Up & Font Kuning */}
         <section className="py-16 bg-white">
           <div className="container mx-auto max-w-7xl px-6 lg:px-8">
             <div className="text-center mb-12 reveal d-1">
@@ -529,69 +529,68 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Menggunakan grid-cols-3 untuk susunan 3-3 yang seimbang */}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
               {/* Card 1 */}
-              <Card className="reveal d-1 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
-                <CardContent className="p-5"> {/* Padding diperkecil agar card tampak ringkas */}
-                  <CheckCircle className="h-7 w-7 mb-3 text-[#172317]" />
-                  <h3 className="text-md font-bold mb-2 text-slate-900">Solusi Khusus</h3>
-                  <p className="text-muted-foreground text-xs leading-relaxed">
+              <Card className="reveal d-1 border border-slate-100 shadow-sm bg-white group transition-all duration-200 ease-out hover:-translate-y-3 hover:shadow-xl cursor-default">
+                <CardContent className="p-5">
+                  <CheckCircle className="h-7 w-7 mb-3 text-[#172317] transition-colors duration-200 group-hover:text-yellow-500" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900 transition-colors duration-200 group-hover:text-yellow-500">Solusi Khusus</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed transition-colors duration-200 group-hover:text-yellow-600">
                     Pendekatan customized sesuai karakteristik and potensi unik setiap desa.
                   </p>
                 </CardContent>
               </Card>
 
               {/* Card 2 */}
-              <Card className="reveal d-2 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+              <Card className="reveal d-2 border border-slate-100 shadow-sm bg-white group transition-all duration-200 ease-out hover:-translate-y-3 hover:shadow-xl cursor-default">
                 <CardContent className="p-5">
-                  <Copy className="h-7 w-7 mb-3 text-[#172317]" />
-                  <h3 className="text-md font-bold mb-2 text-slate-900">Model Replikasi</h3>
-                  <p className="text-muted-foreground text-xs leading-relaxed">
+                  <Copy className="h-7 w-7 mb-3 text-[#172317] transition-colors duration-200 group-hover:text-yellow-500" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900 transition-colors duration-200 group-hover:text-yellow-500">Model Replikasi</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed transition-colors duration-200 group-hover:text-yellow-600">
                     Framework teruji yang dapat diadaptasi untuk berbagai konteks desa di Indonesia.
                   </p>
                 </CardContent>
               </Card>
 
               {/* Card 3 */}
-              <Card className="reveal d-3 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+              <Card className="reveal d-3 border border-slate-100 shadow-sm bg-white group transition-all duration-200 ease-out hover:-translate-y-3 hover:shadow-xl cursor-default">
                 <CardContent className="p-5">
-                  <Smartphone className="h-7 w-7 mb-3 text-[#172317]" />
-                  <h3 className="text-md font-bold mb-2 text-slate-900">Integrasi Digital</h3>
-                  <p className="text-muted-foreground text-xs leading-relaxed">
+                  <Smartphone className="h-7 w-7 mb-3 text-[#172317] transition-colors duration-200 group-hover:text-yellow-500" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900 transition-colors duration-200 group-hover:text-yellow-500">Integrasi Digital</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed transition-colors duration-200 group-hover:text-yellow-600">
                     Platform teknologi bisnisdesa.id untuk operasional and pemasaran yang efisien.
                   </p>
                 </CardContent>
               </Card>
 
               {/* Card 4 */}
-              <Card className="reveal d-1 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+              <Card className="reveal d-1 border border-slate-100 shadow-sm bg-white group transition-all duration-200 ease-out hover:-translate-y-3 hover:shadow-xl cursor-default">
                 <CardContent className="p-5">
-                  <Handshake className="h-7 w-7 mb-3 text-[#172317]" />
-                  <h3 className="text-md font-bold mb-2 text-slate-900">Kemitraan Strategis</h3>
-                  <p className="text-muted-foreground text-xs leading-relaxed">
+                  <Handshake className="h-7 w-7 mb-3 text-[#172317] transition-colors duration-200 group-hover:text-yellow-500" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900 transition-colors duration-200 group-hover:text-yellow-500">Kemitraan Strategis</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed transition-colors duration-200 group-hover:text-yellow-600">
                     Jaringan luas dengan pemerintah, universitas, and sektor swasta untuk keberlanjutan.
                   </p>
                 </CardContent>
               </Card>
 
               {/* Card 5 */}
-              <Card className="reveal d-2 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+              <Card className="reveal d-2 border border-slate-100 shadow-sm bg-white group transition-all duration-200 ease-out hover:-translate-y-3 hover:shadow-xl cursor-default">
                 <CardContent className="p-5">
-                  <UserCheck className="h-7 w-7 mb-3 text-[#172317]" />
-                  <h3 className="text-md font-bold mb-2 text-slate-900">Keterlibatan Komunitas</h3>
-                  <p className="text-muted-foreground text-xs leading-relaxed">
+                  <UserCheck className="h-7 w-7 mb-3 text-[#172317] transition-colors duration-200 group-hover:text-yellow-500" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900 transition-colors duration-200 group-hover:text-yellow-500">Keterlibatan Komunitas</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed transition-colors duration-200 group-hover:text-yellow-600">
                     Pendekatan partisipatif yang memberdayakan masyarakat sebagai aktor utama pembangunan.
                   </p>
                 </CardContent>
               </Card>
 
               {/* Card 6 */}
-              <Card className="reveal d-3 border border-slate-100 shadow-sm hover:shadow-md transition-all bg-white">
+              <Card className="reveal d-3 border border-slate-100 shadow-sm bg-white group transition-all duration-200 ease-out hover:-translate-y-3 hover:shadow-xl cursor-default">
                 <CardContent className="p-5">
-                  <Award className="h-7 w-7 mb-3 text-[#172317]" />
-                  <h3 className="text-md font-bold mb-2 text-slate-900">Track Record Terbukti</h3>
-                  <p className="text-muted-foreground text-xs leading-relaxed">
+                  <Award className="h-7 w-7 mb-3 text-[#172317] transition-colors duration-200 group-hover:text-yellow-500" />
+                  <h3 className="text-md font-bold mb-2 text-slate-900 transition-colors duration-200 group-hover:text-yellow-500">Track Record Terbukti</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed transition-colors duration-200 group-hover:text-yellow-600">
                     20+ proyek sukses dengan dampak nyata bagi ekonomi and masyarakat desa.
                   </p>
                 </CardContent>
@@ -599,6 +598,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
 
         {/* Mitra & Klien Section - 14 Logo (7 Atas, 7 Bawah) Full Color */}
         <section className="py-20 bg-white overflow-hidden">
@@ -717,18 +717,32 @@ export default function HomePage() {
   `}</style>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-primary text-primary-foreground">
+        {/* CTA Section - Hijau #172317 & Button #fa9223 */}
+        <section className="py-20 bg-[#172317] text-white">
           <div className="container mx-auto max-w-7xl px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4 text-balance reveal d-1">Siap Membangun Desa Berkelanjutan?</h2>
-            <p className="text-lg mb-8 opacity-90 text-pretty max-w-2xl mx-auto leading-relaxed reveal d-2">
+            <h2 className="text-3xl font-bold mb-4 text-balance reveal d-1">
+              Siap Membangun Desa Berkelanjutan?
+            </h2>
+            <p className="text-lg mb-8 opacity-80 text-pretty max-w-2xl mx-auto leading-relaxed reveal d-2">
               Konsultasikan kebutuhan desa Anda dengan tim expert kami
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center reveal d-3">
-              <Button size="lg" variant="secondary" asChild>
+              {/* Button Custom Orange-Yellow #fa9223 */}
+              <Button
+                size="lg"
+                className="bg-[#fa9223] text-[#172317] hover:bg-[#fb9d3c] font-bold border-none transition-all"
+                asChild
+              >
                 <Link href="/kontak">Hubungi Kami</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" asChild>
+
+              {/* Button Outline */}
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-white text-white hover:bg-white/10"
+                asChild
+              >
                 <a href="#">Download Company Profile</a>
               </Button>
             </div>

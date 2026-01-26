@@ -741,7 +741,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <style jsx global>{`
+          <style dangerouslySetInnerHTML={{
+            __html: `
     @keyframes marquee {
       0% { transform: translateX(0%); }
       100% { transform: translateX(-100%); }
@@ -763,14 +764,14 @@ export default function HomePage() {
     .animate-marquee-reverse { animation: marquee-reverse 30s linear infinite; }
     .animate-marquee-reverse2 { animation: marquee-reverse2 30s linear infinite; }
     
-    /* Memperlambat animasi di mobile agar lebih nyaman dilihat */
     @media (max-width: 768px) {
       .animate-marquee, .animate-marquee2, 
       .animate-marquee-reverse, .animate-marquee-reverse2 {
         animation-duration: 20s;
       }
     }
-  `}</style>
+  `
+          }} />
         </section>
 
         {/* CTA Section - Hijau #172317 & Button #fa9223 */}

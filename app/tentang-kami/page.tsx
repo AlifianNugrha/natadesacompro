@@ -974,7 +974,7 @@ export default function TentangKamiPage() {
                   size="lg"
                   className="bg-white !text-black border-2 border-white hover:bg-transparent hover:!text-white transition-all duration-300"
                 >
-                  <a href="/company-profile.pdf" download>
+                  <a href="https://drive.google.com/file/d/1WiQJcSd8FrrU_rjYAcEYH-YMqfHzMWxn/view?usp=sharing" download>
                     <Download className="mr-2 h-5 w-5" />
                     Download Company Profile
                   </a>

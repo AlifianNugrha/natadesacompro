@@ -272,16 +272,22 @@ export default function SolusiPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-20 bg-[#172317] text-white">
           <div className="container max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <motion.div {...fadeUp}>
-              <h2 className="text-3xl font-bold mb-4 text-balance">Mari Terapkan Solusi Ini Bersama</h2>
+              <h2 className="text-3xl font-bold mb-4 text-balance">
+                Mari Terapkan Solusi Ini Bersama
+              </h2>
               <p className="text-lg mb-8 opacity-90 text-pretty max-w-2xl mx-auto">
                 Hubungi kami untuk mendiskusikan bagaimana kerangka Natadesa dapat diterapkan di desa Anda
               </p>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="secondary" asChild>
+                {/* Button menggunakan warna #E67E22 dengan hover yang sedikit lebih gelap */}
+                <Button
+                  size="lg"
+                  className="bg-[#E67E22] hover:bg-[#D35400] text-white border-none px-8 transition-colors"
+                  asChild
+                >
                   <Link href="/kontak">Konsultasi Gratis</Link>
                 </Button>
               </motion.div>

@@ -234,6 +234,14 @@ export default function TentangKamiPage() {
     restDelta: 0.001
   });
 
+  const staticImages = [
+    "/tentangkami1.jpg",
+    "/tentangkami2.png",
+    "/tentangkami3.png",
+    "/tentangkami4.jpeg",
+
+  ];
+
   return (
     <>
       <Header />
@@ -254,8 +262,10 @@ export default function TentangKamiPage() {
               </h1>
 
               {/* Deskripsi dengan warna hijau lembut */}
-              <p className="text-xl text-[#172317]/80 text-pretty leading-relaxed">
+              {/* Menggunakan leading-snug untuk jarak baris yang lebih rapat namun tetap elegan */}
+              <p className="text-xl text-[#172317]/80 text-pretty leading-snug">
                 Mitra Terpercaya dalam Pemberdayaan Desa Berkelanjutan
+                Membangun potensi lokal, memberdayakan masyarakat, melestarikan kearifan budaya dan lingkungan melalui produk yang inovatif dan kolaboratif.
               </p>
             </motion.div>
           </div>
@@ -342,6 +352,9 @@ export default function TentangKamiPage() {
           </motion.div>
         </section>
 
+        {/* Pastikan kamu mendefinisikan array ini di dalam komponen sebelum return */}
+        {/* const staticImages = ["/img1.jpg", "/img2.jpg", "/img3.jpg"]; */}
+
         <section className="py-12 md:py-20 bg-muted/30 overflow-hidden">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 md:mb-16">
@@ -351,63 +364,82 @@ export default function TentangKamiPage() {
               </p>
             </div>
 
-            <div ref={containerRef} className="relative max-w-4xl mx-auto">
-              {/* Garis Dasar (Track) - Posisi disesuaikan untuk mobile */}
+            <div ref={containerRef} className="relative max-w-5xl mx-auto">
+              {/* Track & Progress Line */}
               <div className="absolute left-[20px] md:left-[23px] top-2 bottom-2 w-[2px] bg-green-100" />
-
-              {/* Progress Bar Aktif */}
               <motion.div
-                className="absolute left-[20px] md:left-[23px] top-2 bottom-2 w-[2px] bg-green-600 origin-top z-0"
+                className="absolute left-[20px] md:left-[23px] top-2 bottom-2 w-[2px] bg-green-600 origin-top z-10"
                 style={{ scaleY }}
               />
 
-              <div className="space-y-6 md:space-y-10">
+              <div className="space-y-8 md:space-y-12">
                 {timeline && timeline.map((item, index) => (
-                  <div key={index} className="flex gap-4 md:gap-8 relative group">
-                    {/* Penomoran Bulat - Lebih kecil di mobile */}
+                  <div key={index} className="flex gap-6 md:gap-10 relative group">
+
+                    {/* Dot Numbering */}
                     <div className="flex flex-col items-center flex-shrink-0">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border-2 border-green-600 text-green-600 group-hover:bg-green-600 group-hover:text-white flex items-center justify-center font-bold text-xs md:text-sm z-10 shadow-sm transition-all duration-300">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border-2 border-green-600 text-green-600 group-hover:bg-green-600 group-hover:text-white flex items-center justify-center font-bold text-xs md:text-sm z-20 shadow-sm transition-all duration-300">
                         {index + 1}
                       </div>
                     </div>
 
-                    {/* Card Konten */}
+                    {/* Content Card */}
                     <motion.div
-                      className="flex-1 min-w-0" // min-w-0 mencegah flex item meluap
-                      initial={{ opacity: 0, x: 20 }}
+                      className="flex-1 min-w-0"
+                      initial={{ opacity: 0, x: 30 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
-                      <Card className="relative overflow-hidden border-none shadow-sm ring-1 ring-black/5 transition-all duration-500 hover:shadow-lg hover:ring-green-600/30">
+                      <Card className="relative overflow-hidden border-none shadow-lg bg-slate-900 group/card min-h-[220px] md:min-h-[260px]">
 
-                        {/* Top Beam Effect */}
-                        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-green-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        {/* Background Image Logic: Static Images from Public Folder */}
+                        <div className="absolute inset-0 z-0">
+                          <img
+                            src={staticImages[index % staticImages.length]}
+                            alt={item.title}
+                            className="w-full h-full object-cover opacity-100 transition-transform duration-700 group-hover/card:scale-105"
+                          />
+                          {/* Gradient: Gelap lebih ke kanan agar teks putih pop out */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-[#172317] via-black/70 via-[30%] to-transparent" />
+                        </div>
 
-                        <CardContent className="relative p-5 md:p-6">
-                          <div className="flex items-center mb-3">
-                            <span className="text-[10px] md:text-xs font-bold tracking-wider text-green-700 uppercase bg-green-50 px-2 md:px-3 py-1 rounded-md">
-                              {item.year}
-                            </span>
-                          </div>
+                        <CardContent className="relative z-10 p-0 h-full">
+                          <div className="grid grid-cols-1 md:grid-cols-2 h-full">
 
-                          <h3 className="font-bold text-base md:text-xl mb-2 text-slate-800 group-hover:text-green-700 transition-colors">
-                            {item.title}
-                          </h3>
+                            {/* Text Section */}
+                            <div className="p-6 md:p-8 flex flex-col justify-center">
+                              <div className="flex items-center mb-3">
+                                <span className="text-[10px] md:text-xs font-bold tracking-wider text-white bg-green-600 px-3 py-1 rounded-full shadow-lg">
+                                  {item.year}
+                                </span>
+                              </div>
 
-                          <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-3">
-                            {item.description}
-                          </p>
+                              <h3 className="font-bold text-xl md:text-2xl mb-2 text-white group-hover/card:text-green-400 transition-colors duration-300">
+                                {item.title}
+                              </h3>
 
-                          {item.detail && (
-                            <div className="pt-3 border-t border-slate-100">
-                              <p className="text-xs md:text-sm text-muted-foreground font-normal flex items-start gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 shrink-0" />
-                                {item.detail}
+                              <p className="text-sm md:text-base text-slate-200 leading-relaxed mb-4">
+                                {item.description}
                               </p>
+
+                              {item.detail && (
+                                <div className="pt-4 border-t border-white/10">
+                                  <p className="text-xs md:text-sm text-slate-300 font-normal flex items-start gap-2 italic">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0" />
+                                    {item.detail}
+                                  </p>
+                                </div>
+                              )}
                             </div>
-                          )}
+
+                            {/* Empty Space for Background Visibility on Desktop */}
+                            <div className="hidden md:block pointer-events-none" />
+                          </div>
                         </CardContent>
+
+                        {/* Bottom Border Accent */}
+                        <div className="absolute bottom-0 left-0 h-1 bg-green-500 w-0 group-hover/card:w-full transition-all duration-500" />
                       </Card>
                     </motion.div>
                   </div>

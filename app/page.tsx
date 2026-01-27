@@ -54,10 +54,10 @@ const Counter = ({ end, duration = 2000 }: { end: number; duration?: number }) =
 }
 
 export default function HomePage() {
-  // Logic untuk mendeteksi scroll agar animasi muncul bertahap saat masuk layar
+
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.1, // Muncul jika 10% elemen terlihat
+      threshold: 0.1,
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -486,7 +486,7 @@ export default function HomePage() {
                       {["Jawa Tengah", "Bali", "Jawa Barat", "Sumatera", "NTB", "Kalimantan", "Sulawesi", "Papua", "Maluku", "Lampung"][i % 10]}
                     </Badge>
                     <h3 className="text-sm md:text-md font-bold mb-1 text-slate-900 group-hover:text-[#fa9223] transition-colors line-clamp-1">
-                      {["Ponggok Fish & Farm", "Ubud Eco Resort", "Situ Salawe", "Nagari Digital", "Mandalika Village", "Borneo Green", "Celebes Tech", "Papua Rise", "Spice Island", "Way Kambas View"][i % 10]}
+                      {["Tawangmangu", "Muara Muntai Ilir", "Bumi Etan", "Nagari Digital", "Mandalika Village", "Borneo Green", "Celebes Tech", "Papua Rise", "Spice Island", "Way Kambas View"][i % 10]}
                     </h3>
                     {/* Deskripsi tetap ada, hanya ukuran teks sedikit menyesuaikan layar */}
                     <p className="text-slate-500 text-[9px] md:text-[10px] leading-relaxed mb-3 line-clamp-2">

@@ -116,16 +116,30 @@ export default function AnalisisPage() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-20 bg-[#172317] text-white">
-          <div className="container max-w-7xl mx-auto px-6 lg:px-8">
+        <section className="relative py-24 md:py-22 overflow-hidden flex items-center justify-center">
+          {/* Background Image Container */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/sawah.jpg" // Disarankan menggunakan gambar bertema data/peta desa
+              alt="Background Analisis"
+              className="w-full h-full object-cover"
+            />
+            {/* Overlay Hijau Gelap Natadesa dengan Transparansi */}
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
+
+          <div className="container relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <h1 className="text-4xl font-bold mb-6 text-balance">Analisis & Insight</h1>
-              <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance text-white tracking-tight">
+                Analisis & Insight
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 text-pretty leading-relaxed">
                 Analisis mendalam terhadap peluang pasar dan strategi pengembangan desa
               </p>
             </motion.div>

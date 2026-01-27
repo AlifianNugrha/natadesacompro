@@ -121,14 +121,30 @@ export default function SolusiPage() {
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative py-20 bg-[#172317] to-accent/10">
-          <div className="container max-w-7xl mx-auto px-6 lg:px-8">
+        <section className="relative py-24 md:py-32 overflow-hidden flex items-center justify-center">
+          {/* Background Image Container */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/sawah.jpg" // Ganti dengan path gambar kamu
+              alt="Background Solusi"
+              className="w-full h-full object-cover"
+            />
+            {/* Overlay Gradient agar teks putih tetap pop-out dan terbaca */}
+            <div className="absolute inset-0 bg-black/50" />
+          </div>
+
+          <div className="container relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <motion.div
               className="max-w-3xl mx-auto text-center"
-              {...fadeUp}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl font-bold mb-6 text-balance text-white">Solusi Kami</h1>
-              <p className="text-lg text-muted-foreground text-pretty leading-relaxed text-white">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance text-white tracking-tight">
+                Solusi Kami
+              </h1>
+              <p className="text-lg md:text-xl text-slate-200 text-pretty leading-relaxed">
                 Kerangka strategis untuk mempercepat kemandirian ekonomi desa
               </p>
             </motion.div>
@@ -155,9 +171,9 @@ export default function SolusiPage() {
                   transition={{ delay: index * 0.1 }}
                   className="group"
                 >
-                  <Card className="border-destructive/50 h-full transition-shadow hover:shadow-lg hover:shadow-destructive/5">
+                  <Card className="border-green-600/50 h-full transition-shadow hover:shadow-lg hover:shadow-green-600/5">
                     <CardContent className="pt-6">
-                      <problem.icon className="h-10 w-10 text-destructive mb-4 transition-transform group-hover:scale-110" />
+                      <problem.icon className="h-10 w-10 text-green-600 mb-4 transition-transform group-hover:scale-110" />
                       <motion.h3 variants={textAnimation} className="font-semibold mb-2">{problem.title}</motion.h3>
                       <motion.p variants={textAnimation} className="text-sm text-muted-foreground">{problem.description}</motion.p>
                     </CardContent>
@@ -166,7 +182,7 @@ export default function SolusiPage() {
               ))}
             </div>
             <motion.div
-              className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 max-w-3xl mx-auto"
+              className="bg-green-600/10 border border-green-600/20 rounded-lg p-6 max-w-8xl mx-auto"
               {...fadeUp}
             >
               <p className="text-center text-muted-foreground">
@@ -218,7 +234,7 @@ export default function SolusiPage() {
               ))}
             </div>
             <motion.div
-              className="bg-[#172317] text-primary-foreground rounded-lg p-8 text-center max-w-3xl mx-auto"
+              className="bg-[#172317] text-primary-foreground rounded-xl p-8 text-center max-w-7xl mx-auto"
               {...fadeUp}
               whileHover={{ scale: 1.02 }}
             >

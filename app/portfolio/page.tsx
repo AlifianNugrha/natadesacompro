@@ -8,6 +8,9 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { motion } from "framer-motion"
+
+
 import {
   MapPin,
   Calendar,
@@ -24,7 +27,7 @@ import {
   CheckCircle2,
 } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function PortfolioPage() {
@@ -489,6 +492,26 @@ export default function PortfolioPage() {
 
   const allProjects = [...masterPlanProjects, ...trainingProjects, ...techProjects]
 
+  const Counter = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+      let startTimestamp: number | null = null
+      const step = (timestamp: number) => {
+        if (!startTimestamp) startTimestamp = timestamp
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1)
+        setCount(Math.floor(progress * end))
+        if (progress < 1) {
+          window.requestAnimationFrame(step)
+        }
+      }
+      window.requestAnimationFrame(step)
+    }, [end, duration])
+
+    return <span>{count.toLocaleString()}</span>
+  }
+
+
   return (
     <>
       <Header />
@@ -899,50 +922,81 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className="py-16 bg-muted/50">
+        <section className="relative py-20 md:py-32 overflow-hidden flex items-center justify-center">
+          {/* Gambar Background Utama */}
+          <div className="absolute inset-0 -z-10">
+            <img
+              src="/sawah.jpg"
+              alt="Pencapaian Background"
+              className="w-full h-full object-cover"
+            />
+            {/* Overlay Hijau Gelap dengan gradien agar lebih dalam */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#172317]/95 via-[#172317]/80 to-[#172317]/95" />
+          </div>
+
           <div className="container max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Dampak Portfolio Kami</h2>
-              <p className="text-muted-foreground">Transformasi nyata di seluruh Indonesia</p>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white tracking-tight">Pencapaian & Dampak</h2>
+              <p className="text-green-50/70 max-w-2xl mx-auto text-lg">
+                Dedikasi kami dalam menggerakkan ekonomi dan menjaga kelestarian desa wisata di seluruh penjuru negeri.
+              </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">43+</div>
-                  <div className="text-sm text-muted-foreground">Total Projects</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">31</div>
-                  <div className="text-sm text-muted-foreground">Desa Dampingan</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">15</div>
-                  <div className="text-sm text-muted-foreground">Kabupaten</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">7</div>
-                  <div className="text-sm text-muted-foreground">Provinsi</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-sm text-muted-foreground">People Trained</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">10+</div>
-                  <div className="text-sm text-muted-foreground">BUMDes Assisted</div>
-                </CardContent>
-              </Card>
-            </div>
+
+            {/* Container Grid dengan Animasi Stagger */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.1 }
+                }
+              }}
+              className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 max-w-7xl mx-auto"
+            >
+              {[
+                { label: "Total Projects", value: 43, suffix: "+" },
+                { label: "Desa Dampingan", value: 31, suffix: "" },
+                { label: "Kabupaten", value: 15, suffix: "" },
+                { label: "Provinsi", value: 7, suffix: "" },
+                { label: "People Trained", value: 500, suffix: "+" },
+                { label: "BUMDes Assisted", value: 10, suffix: "+" },
+              ].map((metric, index) => (
+                <motion.div
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                  }}
+                  whileHover={{ y: -10 }}
+                  className="h-full"
+                >
+                  <Card className="group relative h-full overflow-hidden border-none bg-white/10 backdrop-blur-md transition-all duration-300 hover:bg-white/20 ring-1 ring-white/20 hover:ring-[#fa9223]/50 shadow-2xl">
+                    {/* Efek Cahaya Oranye saat Hover */}
+                    <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-[#fa9223]/20 blur-2xl transition-opacity opacity-0 group-hover:opacity-100" />
+
+                    <CardContent className="relative pt-10 pb-8 px-4 flex flex-col items-center justify-center">
+                      <div className="text-center">
+                        <p className="text-3xl md:text-4xl font-black text-white mb-2 tracking-tighter group-hover:text-[#fa9223] transition-colors duration-300">
+                          {/* Angka Statis sesuai permintaan (tanpa Counter Error) */}
+                          {metric.value}
+                          <span className="text-[#fa9223]">{metric.suffix}</span>
+                        </p>
+
+                        {/* Garis Aksen Oranye */}
+                        <div className="h-1 w-8 bg-[#fa9223] mx-auto mb-4 rounded-full opacity-50 group-hover:w-12 group-hover:opacity-100 transition-all duration-300" />
+
+                        <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-green-50/80 leading-tight">
+                          {metric.label}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 

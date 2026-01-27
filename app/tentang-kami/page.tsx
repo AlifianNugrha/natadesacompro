@@ -246,9 +246,19 @@ export default function TentangKamiPage() {
     <>
       <Header />
       <main className="flex-1">
-        <section className="relative py-24 bg-gradient-to-br from-green-50 via-background to-emerald-50/20 overflow-hidden">
-          <div className="container max-w-7xl mx-auto px-6 lg:px-8">
-            {/* Wrapper Animasi Fade Up */}
+        <section className="relative py-24 md:py-22 overflow-hidden flex items-center justify-center">
+          {/* Background Image Container */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/sawah.jpg" // Ganti dengan path gambar tentang kami
+              alt="Background Tentang Kami"
+              className="w-full h-full object-cover"
+            />
+            {/* Overlay Hijau Khas Natadesa */}
+            <div className="absolute inset-0 bg-black/40 " />
+          </div>
+
+          <div className="container relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -256,15 +266,17 @@ export default function TentangKamiPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="max-w-3xl mx-auto text-center"
             >
-              {/* Judul dengan warna hijau bold */}
-              <h1 className="text-5xl font-bold mb-6 text-balance text-[#172317]">
+              {/* Judul diubah menjadi Putih karena BG Gelap */}
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance text-white">
                 Tentang Kami
               </h1>
 
-              {/* Deskripsi dengan warna hijau lembut */}
-              {/* Menggunakan leading-snug untuk jarak baris yang lebih rapat namun tetap elegan */}
-              <p className="text-xl text-[#172317]/80 text-pretty leading-snug">
+              {/* Deskripsi diubah menjadi Putih Lembut */}
+              <p className="text-xl md:text-2xl text-white/90 text-pretty leading-relaxed">
                 Mitra Terpercaya dalam Pemberdayaan Desa Berkelanjutan
+              </p>
+
+              <p className="mt-4 text-base md:text-lg text-white/80 text-pretty leading-relaxed">
                 Membangun potensi lokal, memberdayakan masyarakat, melestarikan kearifan budaya dan lingkungan melalui produk yang inovatif dan kolaboratif.
               </p>
             </motion.div>

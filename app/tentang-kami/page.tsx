@@ -235,10 +235,10 @@ export default function TentangKamiPage() {
   });
 
   const staticImages = [
-    "/tentangkami1.jpg",
+    "/tentangkami1.JPG",
     "/tentangkami2.png",
-    "/tentangkami3.png",
-    "/tentangkami4.jpeg",
+    "/tentangkami3.jpg",
+    "/tentangkami4.jpg",
 
   ];
 

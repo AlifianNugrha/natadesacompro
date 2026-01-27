@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   },
   description: "PT. Natadesa Bangun Negeri adalah perusahaan sosial yang berfokus pada pemberdayaan desa, pengembangan desa wisata, dan digitalisasi BUMDes di Indonesia.",
   keywords: ["desa wisata", "pemberdayaan desa", "BUMDes", "natadesanusantara"],
+  // Tambahkan bagian ini:
+  icons: {
+    icon: "/NDICO.ico", // Path ke favicon Anda
+    shortcut: "/NDICO.ico",
+    apple: "/NDICO.ico", // Opsional, jika ada
+  },
   alternates: {
     canonical: "https://natadesanusantara.com",
   },

@@ -82,52 +82,19 @@ export const allProjects: Project[] = [
         badge: "NEW",
         content: "Perencanaan strategis yang diarahkan untuk menjadikan Desa Bumi Etam sebagai pusat pertumbuhan ekonomi baru di Kutai Timur melalui penguatan infrastruktur dan manajemen sumber daya desa."
     },
-
-    // --- TRAINING PROJECTS ---
     {
-        id: "pelatihan-kdmp-tanggeran",
+        id: "RW-01-Desa-Ponggok",
         year: "2025",
-        name: "Pelatihan KDMP Tanggeran",
-        desa: "Tanggeran",
-        kabupaten: "Brebes",
-        provinsi: "Jawa Tengah",
-        jenis: "Pelatihan KDMP",
-        category: "training",
-        content: "Program pelatihan peningkatan kapasitas masyarakat dalam pengelolaan sumber daya desa dan pengembangan ekonomi kreatif berbasis potensi lokal di wilayah Tanggeran."
-    },
-    {
-        id: "pelatihan-bumdesa-ponggok",
-        year: "2024",
-        name: "Pelatihan BUMDesa Ponggok",
-        desa: "Ponggok",
-        kabupaten: "Klaten",
-        provinsi: "Jawa Tengah",
-        jenis: "Pelatihan BUMDes",
-        category: "training",
-        content: "Penyelenggaraan workshop manajemen profesional yang berfokus pada penguatan unit usaha BUMDesa Ponggok untuk mempertahankan ekosistem pariwisata desa yang berkelanjutan."
+        name: "RW 01 Desa Ponggok Fish and Farm",
+        kecamatan: "Kaubun",
+        kabupaten: "Kutai Timur",
+        provinsi: "Kalimantan Timur",
+        kategori: "Rencana Induk Desa",
+        category: "masterplan",
+        badge: "NEW",
+        content: "Perencanaan strategis yang diarahkan untuk menjadikan Desa Bumi Etam sebagai pusat pertumbuhan ekonomi baru di Kutai Timur melalui penguatan infrastruktur dan manajemen sumber daya desa."
     },
 
-    // --- TECH PROJECTS ---
-    {
-        id: "website-bumdesa-tirta-mandiri",
-        year: "2024",
-        name: "Website BUMDesa Tirta Mandiri",
-        desa: "Ponggok",
-        kabupaten: "Klaten",
-        provinsi: "Jawa Tengah",
-        category: "tech",
-        content: "Inisiasi digitalisasi layanan BUMDesa melalui pembuatan platform website profil dan sistem booking online untuk mempermudah akses wisatawan secara transparan.",
-        features: ["Company profile", "Online booking"]
-    },
-    {
-        id: "sistem-rfid-umbul-ponggok",
-        year: "2024",
-        name: "Sistem RFID Umbul Ponggok",
-        desa: "Ponggok",
-        kabupaten: "Klaten",
-        provinsi: "Jawa Tengah",
-        category: "tech",
-        content: "Implementasi teknologi RFID untuk modernisasi tiket masuk dan sistem pembayaran cashless, guna meningkatkan efisiensi operasional dan kenyamanan pengunjung di area wisata.",
-        features: ["Ticketing automation", "Cashless"]
-    }
+
+
 ];

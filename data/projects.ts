@@ -30,7 +30,7 @@ export const allProjects: Project[] = [
         kategori: "Rencana Induk Desa",
         category: "masterplan",
         badge: "NEW",
-        content: "Rencana Induk Desa Cisitu berfokus pada pengembangan potensi agrowisata dan penguatan infrastruktur digital desa.",
+        content: "Wilayah ini memiliki karakteristik agraris yang kuat dengan potensi utama pada sektor pertanian hortikultura, khususnya sebagai produsen sayuran dan buah-buahan yang mencerminkan pola pedesaan produktif di Pulau Jawa.",
         gallery: ["/porto/desacisitu/cisitu.JPG", "/porto/desacisitu/cisitu1.JPG", "/porto/desacisitu/cisitu2.JPG"]
     },
     {
@@ -43,21 +43,20 @@ export const allProjects: Project[] = [
         kategori: "Rencana Induk Desa",
         category: "masterplan",
         badge: "NEW",
-        content: "Pengembangan rencana strategis Desa Grenggeng untuk meningkatkan ekonomi kreatif masyarakat lokal.",
+        content: "Terletak di wilayah kabupaten agraris, desa ini mengandalkan komoditas agrikultur lokal seperti padi dan buah tropis yang dikombinasikan dengan pengembangan sektor kerajinan tangan serta pelestarian nilai-nilai sosial budaya masyarakat setempat.",
         gallery: ["/porto/grenggeng/grenggeng.JPG", "/porto/grenggeng/grenggeng1.JPG", "/porto/grenggeng/grenggeng2.JPG"]
-
     },
     {
         id: "desa-loa-lepu",
         year: "2025",
         name: "Desa Loa Lepu",
-        kecamatan: "Tenggarong Selatan",
+        kecamatan: "Tenggarong Seberang",
         kabupaten: "Kutai Kartanegara",
         provinsi: "Kalimantan Timur",
         kategori: "Rencana Induk Desa",
         category: "masterplan",
         badge: "NEW",
-        content: "Masterplan Desa Loa Lepu yang mengintegrasikan kearifan lokal dengan manajemen pariwisata modern."
+        content: "Berlokasi di Kutai Kartanegara, desa ini memiliki potensi ekonomi besar di sektor perkebunan kelapa sawit dan pertanian pangan, serta peluang strategis pengembangan agrowisata berbasis edukasi alam dan pemberdayaan masyarakat melalui BUMDes."
     },
     {
         id: "desa-muara-muntai-ilir",
@@ -69,7 +68,7 @@ export const allProjects: Project[] = [
         kategori: "Rencana Induk Desa",
         category: "masterplan",
         badge: "NEW",
-        content: "Penyusunan rencana induk desa yang fokus pada pelestarian area perairan dan pariwisata sungai."
+        content: "Penyusunan rencana induk desa yang fokus pada optimalisasi potensi perairan pedalaman dan pengembangan pariwisata sungai sebagai penggerak ekonomi berbasis lingkungan."
     },
     {
         id: "desa-bumi-etam",
@@ -81,7 +80,7 @@ export const allProjects: Project[] = [
         kategori: "Rencana Induk Desa",
         category: "masterplan",
         badge: "NEW",
-        content: "Perencanaan strategis untuk menjadikan Desa Bumi Etam sebagai pusat pertumbuhan ekonomi baru."
+        content: "Perencanaan strategis yang diarahkan untuk menjadikan Desa Bumi Etam sebagai pusat pertumbuhan ekonomi baru di Kutai Timur melalui penguatan infrastruktur dan manajemen sumber daya desa."
     },
 
     // --- TRAINING PROJECTS ---
@@ -94,7 +93,7 @@ export const allProjects: Project[] = [
         provinsi: "Jawa Tengah",
         jenis: "Pelatihan KDMP",
         category: "training",
-        content: "Peningkatan kapasitas tim pengelola desa dalam manajemen destinasi pariwisata."
+        content: "Program pelatihan peningkatan kapasitas masyarakat dalam pengelolaan sumber daya desa dan pengembangan ekonomi kreatif berbasis potensi lokal di wilayah Tanggeran."
     },
     {
         id: "pelatihan-bumdesa-ponggok",
@@ -105,7 +104,7 @@ export const allProjects: Project[] = [
         provinsi: "Jawa Tengah",
         jenis: "Pelatihan BUMDes",
         category: "training",
-        content: "Workshop manajemen profesional untuk penguatan unit usaha BUMDesa Ponggok."
+        content: "Penyelenggaraan workshop manajemen profesional yang berfokus pada penguatan unit usaha BUMDesa Ponggok untuk mempertahankan ekosistem pariwisata desa yang berkelanjutan."
     },
 
     // --- TECH PROJECTS ---
@@ -117,7 +116,7 @@ export const allProjects: Project[] = [
         kabupaten: "Klaten",
         provinsi: "Jawa Tengah",
         category: "tech",
-        content: "Digitalisasi layanan BUMDesa melalui pembuatan website profil dan booking online.",
+        content: "Inisiasi digitalisasi layanan BUMDesa melalui pembuatan platform website profil dan sistem booking online untuk mempermudah akses wisatawan secara transparan.",
         features: ["Company profile", "Online booking"]
     },
     {
@@ -128,7 +127,7 @@ export const allProjects: Project[] = [
         kabupaten: "Klaten",
         provinsi: "Jawa Tengah",
         category: "tech",
-        content: "Implementasi sistem RFID untuk otomasi tiket dan sistem pembayaran cashless.",
+        content: "Implementasi teknologi RFID untuk modernisasi tiket masuk dan sistem pembayaran cashless, guna meningkatkan efisiensi operasional dan kenyamanan pengunjung di area wisata.",
         features: ["Ticketing automation", "Cashless"]
     }
 ];

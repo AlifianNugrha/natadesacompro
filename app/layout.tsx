@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
   // VERIFIKASI GOOGLE SEARCH CONSOLE (Ganti kode di bawah ini)
   verification: {
-    google: "google662673fc127acaa3.html",
+    google: "google662673fc127acaa3",
   },
 
   alternates: {

@@ -167,6 +167,46 @@ export const allProjects: Project[] = [
         content: "Perencanaan strategis yang diarahkan untuk menjadikan Desa Ghatak sebagai pusat pertumbuhan ekonomi baru di Kutai Timur melalui penguatan infrastruktur dan manajemen sumber daya desa.",
         gallery: ["/porto/bumdessidowayah/bumdessidowayah.png", "/porto/bumdessidowayah/bumdessidowayah1.png", "/porto/bumdessidowayah/bumdessidowayah2.png"]
     },
+    {
+        id: "bp-bumdes-ponggok",
+        year: "2025",
+        name: "BP BUMDes Ponggok",
+        kecamatan: "Delanggu",
+        kabupaten: "Kutai Kartanegara",
+        provinsi: "Kalimantan Timur",
+        kategori: "BP BUMDes Ponggok",
+        category: "masterplan",
+        badge: "NEW",
+        content: "Perencanaan strategis yang diarahkan untuk menjadikan Desa Ghatak sebagai pusat pertumbuhan ekonomi baru di Kutai Timur melalui penguatan infrastruktur dan manajemen sumber daya desa.",
+        gallery: ["/porto/bpbumdesponggok/bpbumdespong.png", "/porto/bpbumdesponggok/bpbumdespong1.png", "/porto/bpbumdesponggok/bpbumdespong1.png"]
+    },
+    {
+        id: "bp-jejak-bintang",
+        year: "2025",
+        name: "BP Jejak Bintang",
+        kecamatan: "Delanggu",
+        kabupaten: "Kutai Kartanegara",
+        provinsi: "Kalimantan Timur",
+        kategori: "BP Jejak Bintang",
+        category: "masterplan",
+        badge: "NEW",
+        content: "Perencanaan strategis yang diarahkan untuk menjadikan Desa Ghatak sebagai pusat pertumbuhan ekonomi baru di Kutai Timur melalui penguatan infrastruktur dan manajemen sumber daya desa.",
+        gallery: ["/porto/bpjejakbintang/jejakbintang.png", "/porto/bpjejakbintang/jejakbintang1.png", "/porto/bpjejakbintang/jejakbintang2.png"]
+    },
+    {
+        id: "bp-pelatihan-gatak",
+        year: "2025",
+        name: "BP Pelatihan Gatak",
+        kecamatan: "Delanggu",
+        kabupaten: "Kutai Kartanegara",
+        provinsi: "Kalimantan Timur",
+        kategori: "BP Pelatihan Gatak",
+        category: "masterplan",
+        badge: "NEW",
+        content: "Perencanaan strategis yang diarahkan untuk menjadikan Desa Ghatak sebagai pusat pertumbuhan ekonomi baru di Kutai Timur melalui penguatan infrastruktur dan manajemen sumber daya desa.",
+        gallery: ["/porto/bppelatihanbumdesgatak/pelatihangatak.png", "/porto/bppelatihanbumdesgatak/pelatihangatak.png", "/porto/bppelatihanbumdesgatak/pelatihangatak.png"]
+    },
+
 
 
 ];

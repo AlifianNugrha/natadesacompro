@@ -19,17 +19,17 @@ export const metadata: Metadata = {
     "PT. Natadesa Bangun Negeri adalah perusahaan sosial yang berfokus pada pemberdayaan desa, pengembangan desa wisata, dan digitalisasi BUMDes di Indonesia.",
   keywords: ["desa wisata", "pemberdayaan desa", "BUMDes", "natadesanusantara"],
 
-  // Konfigurasi Ikon (Wajib ada di folder /public)
+  // Perbaikan Ikon dengan Query String (?v=2) untuk memaksa Google update
   icons: {
     icon: [
-      { url: "/NDICO.ico" },
-      { url: "/NDLOGO.png", type: "image/png" }, // Backup untuk Google SEO agar tidak pakai logo v0
+      { url: "/NDICO.ico?v=2" },
+      { url: "/NDLOGO.png?v=2", type: "image/png" },
     ],
-    shortcut: "/NDICO.ico",
-    apple: "/NDICO.ico",
+    shortcut: "/NDICO.ico?v=2",
+    apple: "/NDICO.ico?v=2",
   },
 
-  // VERIFIKASI GOOGLE SEARCH CONSOLE (Ganti kode di bawah ini)
+  // Verifikasi sudah benar menggunakan kode terbaru Anda
   verification: {
     google: "6TVm1svVxduS3buPJLwdINf4NYTlyZodfGk2sffzoVU",
   },

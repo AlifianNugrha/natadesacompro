@@ -461,15 +461,16 @@ export default function TentangKamiPage() {
           </div>
         </section>
 
-        <section className="relative py-16 overflow-hidden">
+        <section className="relative py-24 overflow-hidden">
           {/* Image Background */}
           <div className="absolute inset-0 -z-10">
             <img
               src="/sawah.jpg"
               alt="Background"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover scale-105" // Sedikit scale agar tidak ada gap putih di pinggir
             />
-            <div className="absolute inset-0 bg-black/50 dark:bg-black/90" />
+            {/* Overlay Overlay yang lebih gelap agar teks terbaca jelas */}
+            <div className="absolute inset-0 bg-black/60 dark:bg-black/80 backdrop-grayscale-[20%]" />
           </div>
 
           <div className="container max-w-7xl mx-auto px-6 lg:px-8">
@@ -478,13 +479,15 @@ export default function TentangKamiPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
-              <h2 className="text-3xl font-bold mb-4 text-white">Misi Utama</h2>
-              <p className="text-white/80">Empat pilar utama dalam pemberdayaan desa</p>
+              <h2 className="text-4xl font-extrabold mb-4 text-white tracking-tight">Misi Utama</h2>
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">
+                Empat pilar utama dalam pemberdayaan desa untuk masa depan yang lebih mandiri.
+              </p>
             </motion.div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {mainMissions.map((mission, index) => (
                 <motion.div
                   key={index}
@@ -493,20 +496,41 @@ export default function TentangKamiPage() {
                   viewport={{ once: true }}
                   transition={{
                     duration: 0.5,
-                    delay: index * 0.1 // Animasi muncul satu per satu
+                    delay: index * 0.1
                   }}
                 >
-                  <Card className="h-full text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-xl cursor-default bg-white/95 dark:bg-zinc-900/95 backdrop-blur-sm border-none">
-                    <CardContent className="pt-8">
-                      <div className="rounded-full bg-primary/10 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <mission.icon className="h-8 w-8 text-primary" />
+                  <Card className="group relative h-full text-center transition-all duration-500 cursor-pointer overflow-hidden
+                /* Base Style (Biasa) */
+                bg-white/10 dark:bg-zinc-900/40 backdrop-blur-md border border-white/20 
+                
+                /* Hover Style (Glassmorphism Tinggi) */
+                hover:bg-white/20 hover:dark:bg-white/10 
+                hover:backdrop-blur-xl 
+                hover:border-white/40 
+                hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] 
+                hover:-translate-y-3">
+
+                    {/* Efek Cahaya Halus saat Hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    <CardContent className="relative z-10 pt-10 pb-8 px-6">
+                      {/* Icon Container */}
+                      <div className="rounded-2xl bg-primary/20 w-16 h-16 flex items-center justify-center mx-auto mb-6 
+                    transition-all duration-500 group-hover:scale-110 group-hover:bg-primary group-hover:rotate-3">
+                        <mission.icon className="h-8 w-8 text-primary group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <h3 className="font-bold text-lg mb-3">{mission.title}</h3>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
+
+                      <h3 className="font-bold text-xl mb-4 text-white transition-colors duration-300">
+                        {mission.title}
+                      </h3>
+
+                      <ul className="space-y-3 text-sm">
                         {mission.points.map((point, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-left">
-                            <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                            <span className="leading-tight">{point}</span>
+                          <li key={idx} className="flex items-start gap-3 text-left">
+                            <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0 transition-colors duration-300 group-hover:text-white" />
+                            <span className="leading-snug text-white/80 group-hover:text-white transition-colors duration-300">
+                              {point}
+                            </span>
                           </li>
                         ))}
                       </ul>

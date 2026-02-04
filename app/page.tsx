@@ -329,57 +329,64 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        {/* --- SECTION SOLUSI KAMI (COMPACT VERSION) --- */}
+        {/* --- SECTION SOLUSI KAMI (MATCHED INTERNALLY & EXTERNALLY) --- */}
         <section className="py-12 md:py-16 bg-[#ffffff]">
           <div className="container mx-auto max-w-5xl px-6 lg:px-8">
             <div className="text-center mb-10 reveal d-1">
-              <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl mb-2">Solusi Kami</h2>
-              <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              <h2 className="text-2xl font-bold tracking-tight text-[#172317] sm:text-3xl mb-2">Solusi Kami</h2>
+              <p className="text-sm md:text-base text-slate-500 max-w-2xl mx-auto leading-relaxed">
                 Tiga pilar strategi untuk pemberdayaan desa berkelanjutan
               </p>
             </div>
 
-            {/* Grid Kartu: Minimalist White Style */}
+            {/* Grid Kartu: Gaya identik dengan Section Dampak */}
             <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-3 mb-12">
+
               {/* Pilar 1 */}
-              <Card className="reveal d-1 border border-slate-100 hover:border-[#065a45] shadow-sm hover:shadow-md transition-all duration-300 bg-white group cursor-default">
-                <CardContent className="p-6 flex flex-col items-start h-full">
-                  <div className="w-12 h-12 bg-[#172317]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#172317] transition-colors duration-300">
+              <Card className="reveal d-1 bg-white border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group cursor-default overflow-hidden">
+                <CardContent className="p-6 text-center flex flex-col items-center h-full">
+                  <div className="bg-[#065a45]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#065a45] transition-all duration-300">
                     <GraduationCap className="h-6 w-6 text-[#065a45] group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-base font-bold mb-2 text-slate-900 leading-tight">Pilar 1: Peningkatan Kapasitas</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed text-left">
+                  <h3 className="text-base font-bold mb-2 text-slate-900 leading-tight">
+                    Pilar 1: Peningkatan Kapasitas
+                  </h3>
+                  <p className="text-xs md:text-sm text-slate-500 font-medium leading-snug px-2">
                     Pelatihan dan pendampingan SDM desa dalam pengelolaan bisnis dan pariwisata berkelanjutan.
                   </p>
                 </CardContent>
               </Card>
 
               {/* Pilar 2 */}
-              <Card className="reveal d-2 border border-slate-100 hover:border-[#065a45] shadow-sm hover:shadow-md transition-all duration-300 bg-white group cursor-default">
-                <CardContent className="p-6 flex flex-col items-start h-full">
-                  <div className="w-12 h-12 bg-[#172317]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#172317] transition-colors duration-300">
+              <Card className="reveal d-2 bg-white border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group cursor-default overflow-hidden">
+                <CardContent className="p-6 text-center flex flex-col items-center h-full">
+                  <div className="bg-[#065a45]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#065a45] transition-all duration-300">
                     <Smartphone className="h-6 w-6 text-[#065a45] group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-base font-bold mb-2 text-slate-900 leading-tight">Pilar 2: Integrasi Digital</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed text-left">
+                  <h3 className="text-base font-bold mb-2 text-slate-900 leading-tight">
+                    Pilar 2: Integrasi Digital
+                  </h3>
+                  <p className="text-xs md:text-sm text-slate-500 font-medium leading-snug px-2">
                     Digitalisasi proses bisnis dan pemasaran melalui platform teknologi untuk efisiensi pasar.
                   </p>
                 </CardContent>
               </Card>
 
               {/* Pilar 3 */}
-              <Card className="reveal d-3 border border-slate-100 hover:border-[#172317] shadow-sm hover:shadow-md transition-all duration-300 bg-white group cursor-default">
-                <CardContent className="p-6 flex flex-col items-start h-full">
-                  <div className="w-12 h-12 bg-[#172317]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#172317] transition-colors duration-300">
-                    <Network className="h-6 w-6 text-[#172317] group-hover:text-white transition-colors" />
+              <Card className="reveal d-3 bg-white border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group cursor-default overflow-hidden">
+                <CardContent className="p-6 text-center flex flex-col items-center h-full">
+                  <div className="bg-[#065a45]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#065a45] transition-all duration-300">
+                    <Network className="h-6 w-6 text-[#065a45] group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-base font-bold mb-2 text-slate-900 leading-tight">Pilar 3: Keterkaitan Pasar</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed text-left">
+                  <h3 className="text-base font-bold mb-2 text-slate-900 leading-tight">
+                    Pilar 3: Keterkaitan Pasar
+                  </h3>
+                  <p className="text-xs md:text-sm text-slate-500 font-medium leading-snug px-2">
                     Membangun koneksi dengan pasar dan mitra strategis demi keberlanjutan ekonomi desa.
                   </p>
                 </CardContent>
               </Card>
+
             </div>
 
             {/* Backbone Banner */}
@@ -423,21 +430,21 @@ export default function HomePage() {
               ].map((item, index) => (
                 <Card
                   key={index}
-                  className={`reveal ${item.delay} border border-slate-100 bg-white group transition-all duration-300 ease-out hover:-translate-y-2 hover:border-yellow-500 hover:shadow-[0_15px_30px_-10px_rgba(234,179,8,0.2)] cursor-default overflow-hidden`}
+                  className={`reveal ${item.delay} border border-slate-100 bg-white group transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#065a45] hover:shadow-[0_15px_30px_-10px_rgba(6,90,69,0.2)] cursor-default overflow-hidden`}
                 >
-                  <CardContent className="pt-8 pb-8 px-6 flex flex-col h-full">
+                  <CardContent className="pt-8 pb-8 px-6 flex flex-col items-center text-center h-full">
                     {/* Icon Container */}
-                    <div className="bg-[#172317]/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-yellow-500/10">
-                      <item.icon className="h-7 w-7 text-[#172317] transition-colors duration-300 group-hover:text-yellow-600" />
+                    <div className="bg-[#172317]/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-[#065a45]/10">
+                      <item.icon className="h-7 w-7 text-[#172317] transition-colors duration-300 group-hover:text-[#065a45]" />
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold mb-3 text-slate-900 transition-colors duration-300 group-hover:text-yellow-700 leading-tight">
+                    <h3 className="text-lg font-bold mb-3 text-slate-900 transition-colors duration-300 group-hover:text-[#065a45] leading-tight">
                       {item.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
+                    <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">
                       {item.desc}
                     </p>
                   </CardContent>
@@ -485,7 +492,7 @@ export default function HomePage() {
                     <Badge className="mb-2 bg-[#172317]/10 text-[#172317] border-none text-[9px] md:text-[10px]">
                       {["Jawa Tengah", "Bali", "Jawa Barat", "Sumatera", "NTB", "Kalimantan", "Sulawesi", "Papua", "Maluku", "Lampung"][i % 10]}
                     </Badge>
-                    <h3 className="text-sm md:text-md font-bold mb-1 text-slate-900 group-hover:text-[#fa9223] transition-colors line-clamp-1">
+                    <h3 className="text-sm md:text-md font-bold mb-1 text-slate-900 group-hover:text-[#065a45] transition-colors line-clamp-1">
                       {["Tawangmangu", "Muara Muntai Ilir", "Bumi Etan", "Nagari Digital", "Mandalika Village", "Borneo Green", "Celebes Tech", "Papua Rise", "Spice Island", "Way Kambas View"][i % 10]}
                     </h3>
                     {/* Deskripsi tetap ada, hanya ukuran teks sedikit menyesuaikan layar */}
@@ -512,7 +519,7 @@ export default function HomePage() {
                     <Badge className="mb-2 bg-[#172317]/10 text-[#172317] border-none text-[9px] md:text-[10px]">
                       {["Jawa Tengah", "Bali", "Jawa Barat", "Sumatera", "NTB", "Kalimantan", "Sulawesi", "Papua", "Maluku", "Lampung"][i % 10]}
                     </Badge>
-                    <h3 className="text-sm md:text-md font-bold mb-1 text-slate-900 group-hover:text-[#fa9223] transition-colors line-clamp-1">
+                    <h3 className="text-sm md:text-md font-bold mb-1 text-slate-900 group-hover:text-[#065a45] transition-colors line-clamp-1">
                       {["Ponggok Fish & Farm", "Ubud Eco Resort", "Situ Salawe", "Nagari Digital", "Mandalika Village", "Borneo Green", "Celebes Tech", "Papua Rise", "Spice Island", "Way Kambas View"][i % 10]}
                     </h3>
                     <p className="text-slate-500 text-[9px] md:text-[10px] leading-relaxed mb-3 line-clamp-2">

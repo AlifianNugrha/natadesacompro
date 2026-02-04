@@ -803,18 +803,26 @@ export default function LayananPage() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   {/* Card Putih Solid & Lebih Kecil/Compact */}
-                  <Card className="bg-white border-none shadow-xl hover:scale-[1.02] transition-transform duration-300">
-                    <CardContent className="p-5">
-                      <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 mb-4">
-                        <advantage.icon className="h-5 w-5 text-primary" />
+                  <Card className="group relative bg-white border border-transparent shadow-xl cursor-default transition-all duration-200 hover:-translate-y-2 hover:bg-white/10 hover:backdrop-blur-xl hover:border-white/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden">
+                    <CardContent className="p-6 relative z-10">
+                      {/* Icon Container */}
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#065a45]/10 mb-5 group-hover:bg-[#065a45] transition-colors duration-200">
+                        <advantage.icon className="h-6 w-6 text-[#065a45] group-hover:text-white transition-colors" />
                       </div>
-                      <h3 className="font-bold mb-2 text-base text-slate-900">
+
+                      {/* Title */}
+                      <h3 className="font-bold mb-2 text-lg text-slate-900 group-hover:text-white transition-colors duration-200">
                         {advantage.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed">
+
+                      {/* Description */}
+                      <p className="text-sm text-slate-600 leading-relaxed group-hover:text-white/90 transition-colors duration-200">
                         {advantage.description}
                       </p>
                     </CardContent>
+
+                    {/* Refleksi Cahaya Kaca (Opsional untuk kesan premium) */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                   </Card>
                 </motion.div>
               ))}
@@ -995,7 +1003,7 @@ export default function LayananPage() {
         </section>
 
         {/* CTA Section with Form */}
-        <section className="py-20 bg-primary text-primary-foreground">
+        <section className="py-20 bg-[#172317] text-primary-foreground">
           <div className="container max-w-6xl mx-auto px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div

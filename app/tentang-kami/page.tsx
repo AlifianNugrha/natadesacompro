@@ -152,19 +152,29 @@ export default function TentangKamiPage() {
 
   const teamLeaders = [
     {
+      name: "Prof. Dr. dr. Asra AlFauzi, Sp.BS, Subsp. N Vas",
+      position: "Penasihat",
+      image: "/dr.jpeg" // Path relatif ke folder public
+    },
+    {
+      name: "H. Junaedhi Mulyono,S.H",
+      position: "Pembimbing",
+      image: "/pakjun.jpeg" // Path relatif ke folder public
+    },
+    {
       name: "Harri Yudho P .SE",
       position: "Ketua",
       image: "/HARRI.png" // Path relatif ke folder public
     },
     {
-      name: "Irfan Saputra S. Ars",
-      position: "COO",
-      image: "/IRFAN.png" // Path relatif ke folder public
-    },
-    {
       name: "Alifta Asyari R, A.MD",
       position: "Business Development",
-      image: "/TATA.png" // Path relatif ke folder public
+      image: "/TATA.png" // Placeholder
+    },
+    {
+      name: "Irfan Saputra S. Ars",
+      position: "COO",
+      image: "/IRFAN.png" // Placeholder
     },
   ]
 
@@ -760,45 +770,51 @@ export default function TentangKamiPage() {
               </p>
             </div>
 
-            {/* Leadership Team - Dengan Foto */}
-            <div className="mb-16">
-              <h3 className="text-2xl font-bold text-center mb-10">Tim Kepemimpinan</h3>
-              <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+            {/* Leadership Team - Dengan Foto & Layout Keren */}
+            <div className="mb-20">
+              <h3 className="text-3xl font-bold text-center mb-12 text-slate-800 tracking-tight">Tim Kepemimpinan</h3>
+
+              {/* Menggunakan Flexbox agar item ke-4 & 5 otomatis di tengah */}
+              <div className="flex flex-wrap justify-center gap-8 lg:gap-10 max-w-6xl mx-auto px-4">
                 {teamLeaders.map((leader, index) => (
-                  <Card
+                  <motion.div
                     key={index}
-                    className="group overflow-hidden border-none shadow-none bg-transparent"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    className="w-full sm:w-[280px] lg:w-[300px]"
                   >
-                    <CardContent className="p-0">
-                      {/* Frame Foto: Menggunakan aspect-square dengan rounded-2xl agar terlihat profesional */}
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted mb-4 transition-transform duration-500 group-hover:shadow-xl">
+                    <div className="group relative flex flex-col items-center">
+
+                      {/* Frame Foto Unik */}
+                      <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl mb-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+
                         {leader.image ? (
                           <img
                             src={leader.image}
                             alt={leader.name}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center bg-slate-100">
-                            <Users className="h-12 w-12 text-slate-300" />
+                          <div className="w-full h-full flex items-center justify-center bg-slate-100 text-slate-300">
+                            <Users className="h-20 w-20" />
                           </div>
                         )}
-
-                        {/* Overlay tipis saat hover untuk kesan premium */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
 
-                      {/* Info Text - Rata Kiri atau Tengah sesuai selera, di sini saya gunakan rata tengah */}
-                      <div className="text-center">
-                        <h3 className="font-bold text-xl text-slate-900 group-hover:text-primary transition-colors duration-300">
+                      {/* Info Text - Always Visible */}
+                      <div className="text-center relative z-10 w-full px-2">
+                        <h3 className="font-bold text-xl text-slate-900 leading-tight">
                           {leader.name}
                         </h3>
-                        <p className="text-sm font-semibold uppercase tracking-wider text-primary mt-1">
+                        <p className="text-sm font-medium uppercase tracking-wider text-green-600 mt-2 border-t border-slate-200 pt-2 inline-block">
                           {leader.position}
                         </p>
                       </div>
-                    </CardContent>
-                  </Card>
+
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </div>

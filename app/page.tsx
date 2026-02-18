@@ -489,9 +489,6 @@ export default function HomePage() {
                     />
                   </div>
                   <CardContent className="p-4 md:pt-5 bg-white">
-                    <Badge className="mb-2 bg-[#172317]/10 text-[#172317] border-none text-[9px] md:text-[10px]">
-                      {["Jawa Tengah", "Bali", "Jawa Barat", "Sumatera", "NTB", "Kalimantan", "Sulawesi", "Papua", "Maluku", "Lampung"][i % 10]}
-                    </Badge>
                     <h3 className="text-sm md:text-md font-bold mb-1 text-slate-900 group-hover:text-[#065a45] transition-colors line-clamp-1">
                       {["Situ Salawe", "Pandidipa", "Ponggok Fish & Farm", "Delanggu Eco Park", "Ponggok Agrotechnopark", "Soko Alas Resort", "Ponggok paradeso", "Bumi Tirta Village"][i % 10]}
                     </h3>
@@ -515,9 +512,6 @@ export default function HomePage() {
                     />
                   </div>
                   <CardContent className="p-4 md:pt-5 bg-white">
-                    <Badge className="mb-2 bg-[#172317]/10 text-[#172317] border-none text-[9px] md:text-[10px]">
-                      {["Jawa Tengah", "Bali", "Jawa Barat", "Sumatera", "NTB", "Kalimantan", "Sulawesi", "Papua", "Maluku", "Lampung"][i % 10]}
-                    </Badge>
                     <h3 className="text-sm md:text-md font-bold mb-1 text-slate-900 group-hover:text-[#065a45] transition-colors line-clamp-1">
                       {["Situ Salawe", "Pandidipa", "Ponggok Fish & Farm", "Delanggu Eco Park", "Ponggok Agrotechnopark", "Soko Alas Resort", "Ponggok paradeso", "Bumi Tirta Village"][i % 10]}
                     </h3>

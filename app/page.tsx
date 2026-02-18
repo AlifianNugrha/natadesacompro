@@ -478,11 +478,11 @@ export default function HomePage() {
               }}
             >
               {/* 10 Portfolio Cards Asli */}
-              {[...Array(10)].map((_, i) => (
+              {[...Array(8)].map((_, i) => (
                 <Card key={i} className="w-[260px] md:w-[280px] flex-shrink-0 overflow-hidden border-none bg-white shadow-xl group transition-all duration-300 hover:-translate-y-2">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src={`/portofolio${i + 1}.jpeg`}
+                      src={`/herosection/portofolio${i + 1}.png`}
                       alt={`Project ${i + 1}`}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -493,23 +493,22 @@ export default function HomePage() {
                       {["Jawa Tengah", "Bali", "Jawa Barat", "Sumatera", "NTB", "Kalimantan", "Sulawesi", "Papua", "Maluku", "Lampung"][i % 10]}
                     </Badge>
                     <h3 className="text-sm md:text-md font-bold mb-1 text-slate-900 group-hover:text-[#065a45] transition-colors line-clamp-1">
-                      {["Tawangmangu", "Muara Muntai Ilir", "Bumi Etan", "Nagari Digital", "Mandalika Village", "Borneo Green", "Celebes Tech", "Papua Rise", "Spice Island", "Way Kambas View"][i % 10]}
+                      {["Situ Salawe", "Pandidipa", "Ponggok Fish & Farm", "Delanggu Eco Park", "Ponggok Agrotechnopark", "Soko Alas Resort", "Ponggok paradeso", "Bumi Tirta Village"][i % 10]}
                     </h3>
                     {/* Deskripsi tetap ada, hanya ukuran teks sedikit menyesuaikan layar */}
                     <p className="text-slate-500 text-[9px] md:text-[10px] leading-relaxed mb-3 line-clamp-2">
                       Transformasi strategis untuk meningkatkan ekonomi desa berkelanjutan.
                     </p>
-                    <p className="text-[10px] md:text-[11px] font-bold text-[#172317]">2022-2024</p>
                   </CardContent>
                 </Card>
               ))}
 
               {/* Duplikasi Card Lengkap untuk looping */}
-              {[...Array(10)].map((_, i) => (
+              {[...Array(8)].map((_, i) => (
                 <Card key={`dup-${i}`} className="w-[260px] md:w-[280px] flex-shrink-0 overflow-hidden border-none bg-white shadow-xl group transition-all duration-300 hover:-translate-y-2">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src={`/portofolio${i + 1}.jpeg`}
+                      src={`/herosection/portofolio${i + 1}.png`}
                       alt="Project"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform"
@@ -520,12 +519,11 @@ export default function HomePage() {
                       {["Jawa Tengah", "Bali", "Jawa Barat", "Sumatera", "NTB", "Kalimantan", "Sulawesi", "Papua", "Maluku", "Lampung"][i % 10]}
                     </Badge>
                     <h3 className="text-sm md:text-md font-bold mb-1 text-slate-900 group-hover:text-[#065a45] transition-colors line-clamp-1">
-                      {["Ponggok Fish & Farm", "Ubud Eco Resort", "Situ Salawe", "Nagari Digital", "Mandalika Village", "Borneo Green", "Celebes Tech", "Papua Rise", "Spice Island", "Way Kambas View"][i % 10]}
+                      {["Situ Salawe", "Pandidipa", "Ponggok Fish & Farm", "Delanggu Eco Park", "Ponggok Agrotechnopark", "Soko Alas Resort", "Ponggok paradeso", "Bumi Tirta Village"][i % 10]}
                     </h3>
                     <p className="text-slate-500 text-[9px] md:text-[10px] leading-relaxed mb-3 line-clamp-2">
                       Transformasi strategis untuk meningkatkan ekonomi desa berkelanjutan.
                     </p>
-                    <p className="text-[10px] md:text-[11px] font-bold text-[#172317]">2022-2024</p>
                   </CardContent>
                 </Card>
               ))}

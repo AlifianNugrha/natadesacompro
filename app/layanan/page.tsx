@@ -292,6 +292,7 @@ export default function LayananPage() {
       number: 1,
       icon: Search,
       title: "Discovery & Assessment",
+      image: "/sawah.jpg",
       items: [
         "Kunjungan lapangan",
         "Pemetaan potensi",
@@ -304,6 +305,7 @@ export default function LayananPage() {
       number: 2,
       icon: FileText,
       title: "Planning & Strategy",
+      image: "/sawah.jpg",
       items: [
         "Penyusunan rencana strategis",
         "Design & blueprint",
@@ -316,6 +318,7 @@ export default function LayananPage() {
       number: 3,
       icon: Rocket,
       title: "Implementation",
+      image: "/sawah.jpg",
       items: [
         "Execution sesuai timeline",
         "Training & capacity building",
@@ -327,12 +330,14 @@ export default function LayananPage() {
     {
       number: 4,
       icon: BarChart3,
+      image: "/sawah.jpg",
       title: "Monitoring & Evaluation",
       items: ["Performance tracking", "Impact assessment", "Problem-solving", "Optimization", "Reporting"],
     },
     {
       number: 5,
       icon: Sprout,
+      image: "/sawah.jpg",
       title: "Sustainability",
       items: [
         "Continuous improvement",
@@ -680,11 +685,24 @@ export default function LayananPage() {
 
         {/* Proses Kerja - How We Work */}
         <section className="py-16 bg-muted/30 relative overflow-hidden">
-          {/* Ref untuk tracking scroll di section ini */}
+          {/* Ref untuk tracking scroll */}
           <div ref={containerRef} className="container max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
-              <motion.h2 /* ... props */ >Bagaimana Kami Bekerja</motion.h2>
-              <motion.p /* ... props */ >
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl font-bold tracking-tight sm:text-4xl mb-4"
+              >
+                Bagaimana Kami Bekerja
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-muted-foreground text-lg max-w-2xl mx-auto"
+              >
                 Proses terstruktur dari perencanaan hingga keberlanjutan
               </motion.p>
             </div>
@@ -696,10 +714,7 @@ export default function LayananPage() {
               {/* Animated Progress Line (Garis Biru Mengikuti Scroll) */}
               <motion.div
                 className="hidden md:block absolute left-1/2 top-0 w-0.5 bg-primary origin-top -translate-x-1/2"
-                style={{
-                  scaleY,
-                  height: '100%'
-                }}
+                style={{ scaleY, height: '100%' }}
               />
 
               <div className="space-y-12">
@@ -710,29 +725,46 @@ export default function LayananPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.5 }}
-                    className={`flex flex-col md:flex-row gap-8 items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                    className={`flex flex-col md:flex-row gap-8 items-stretch ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                       }`}
                   >
-                    {/* Content Card */}
+                    {/* --- CARD AREA --- */}
                     <div className="flex-1 w-full">
-                      <Card className="hover:shadow-lg transition-shadow border-none bg-background/60 backdrop-blur-sm">
-                        <CardContent className="pt-6">
-                          <div className="flex items-center gap-3 mb-4">
-                            <div className="p-2 rounded-lg bg-primary/10">
-                              <step.icon className="h-6 w-6 text-primary" />
+                      <Card className="group relative overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-500 h-full min-h-[320px] flex flex-col justify-end">
+
+                        {/* 1. Background Image */}
+                        <div className="absolute inset-0 z-0">
+                          <img
+                            src={step.image || "/images/placeholder.jpg"} // Pastikan data workProcess ada properti image
+                            alt={step.title}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                        </div>
+
+                        {/* 2. Gradient Overlay (Hitam) */}
+                        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/50 to-black/10 opacity-90" />
+
+                        {/* 3. Content (Diatas Overlay) */}
+                        <CardContent className="relative z-20 p-8">
+                          <div className="flex items-center gap-4 mb-6">
+                            {/* Icon dengan Glassmorphism */}
+                            <div className="p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-inner">
+                              <step.icon className="h-6 w-6 text-white" />
                             </div>
+
                             <div>
-                              <div className="text-xs font-bold uppercase tracking-wider text-primary/60">
+                              <div className="text-xs font-bold uppercase tracking-widest text-gray-300 mb-1">
                                 Tahap {step.number}
                               </div>
-                              <h3 className="font-bold text-xl">{step.title}</h3>
+                              <h3 className="font-bold text-2xl text-white tracking-tight">{step.title}</h3>
                             </div>
                           </div>
+
                           <ul className="space-y-3">
                             {step.items.map((item, i) => (
-                              <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                                <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                                <span>{item}</span>
+                              <li key={i} className="flex items-start gap-3 text-sm text-gray-200/90">
+                                <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5 drop-shadow-md" />
+                                <span className="font-medium leading-relaxed">{item}</span>
                               </li>
                             ))}
                           </ul>
@@ -741,16 +773,20 @@ export default function LayananPage() {
                     </div>
 
                     {/* Center Circle Indicator */}
-                    <div className="hidden md:flex relative z-20 flex-shrink-0">
+                    <div className="hidden md:flex relative z-20 flex-shrink-0 items-center justify-center">
                       <motion.div
-                        whileInView={{ scale: [0.8, 1.2, 1], backgroundColor: ["#ccc", "#172131"] }}
-                        className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shadow-xl border-4 border-background"
+                        whileInView={{
+                          scale: [0.8, 1.2, 1],
+                          backgroundColor: ["#ffffff", "#0f172a"] // Efek kedip saat di-scroll
+                        }}
+                        transition={{ duration: 0.5 }}
+                        className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shadow-[0_0_15px_rgba(0,0,0,0.2)] border-4 border-white dark:border-gray-900"
                       >
                         {step.number}
                       </motion.div>
                     </div>
 
-                    {/* Spacer */}
+                    {/* Spacer untuk sisi kosong */}
                     <div className="hidden md:block flex-1" />
                   </motion.div>
                 ))}

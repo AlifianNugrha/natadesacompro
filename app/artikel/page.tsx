@@ -1,95 +1,158 @@
-import React from "react"
+"use client"
+
+import React, { useState, useCallback } from "react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingActions } from "@/components/floating-actions"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Clock, Globe } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Calendar, Clock, Globe, ChevronLeft, ChevronRight } from "lucide-react"
+
+const ARTICLES_PER_PAGE = 6;
+
+const articles = [
+  {
+    category: "Berita & Update",
+    title: "Kades Cs Ramai-Ramai Demo di Dekat Monas, Teriak-Teriak Ini",
+    excerpt: "Ratusan kepala desa (kades) yang tergabung dalam berbagai asosiasi menggelar aksi unjuk rasa di kawasan Monas, Jakarta Pusat. Mereka menyuarakan aspirasi mendesak terkait revisi kebijakan operasional dan anggaran pembangunan desa untuk tahun anggaran 2026.",
+    date: "08 Des 2025",
+    readTime: "4 min",
+    image: "/artikel/artikel1.jpeg",
+    url: "https://www.cnbcindonesia.com/news/20251208134245-7-692082/kades-cs-ramai-ramai-demo-di-dekat-monas-teriak-teriak-ini",
+    source: "CNBC Indonesia"
+  },
+  {
+    category: "Berita & Update",
+    title: "Natadesa Meluncurkan Platform Bisnisdesa.id",
+    excerpt: "Guna mempercepat digitalisasi pedesaan, Natadesa resmi merilis Bisnisdesa.id, sebuah platform digital terpadu yang dirancang khusus untuk mengoptimalkan manajemen operasional BUMDes serta efisiensi tata kelola desa wisata secara nasional.",
+    date: "15 Jan 2026",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+    url: "https://bisnisdesa.id",
+    source: "Natadesa News"
+  },
+  {
+    category: "Berita & Update",
+    title: "Sukses Tingkatkan Kesejahteraan Warga, Desa Ponggok Jadi Inspirasi",
+    excerpt: "Platform digital terpadu untuk mendukung operasional BUMDes dan desa wisata di seluruh Indonesia melalui inspirasi keberhasilan pembangunan kawasan.",
+    date: "15 Jan 2026",
+    readTime: "5 min",
+    image: "/artikel/artikel2.jpg",
+    url: "https://www.transmigrasi.go.id/sukses-tingkatkan-kesejahteraan-warganya-desa-ponggok-jadi-inspirasi-pembangunan-kawasan-transmigrasi/?utm_source=chatgpt.com",
+    source: "Kemenaker"
+  },
+  {
+    category: "Berita & Update",
+    title: "Penglipuran Raih Penghargaan Best Tourism Village 2023 dari UNWTO",
+    excerpt: "Desa Wisata Penglipuran di Bali berhasil mengharumkan nama Indonesia dengan meraih penghargaan internasional sebagai salah satu desa wisata terbaik dunia versi UNWTO, mengungguli ribuan kandidat global lainnya.",
+    date: "19 Okt 2023",
+    readTime: "3 min",
+    image: "/artikel/artikel3.webp",
+    url: "https://www.antaranews.com/berita/3785523/penglipuran-raih-penghargaan-best-tourism-village-2023-dari-unwto?utm_source=chatgpt.com",
+    source: "Antara News"
+  },
+  {
+    category: "Berita & Update",
+    title: "Desa Nglanggeran: Contoh Keberhasilan Pengembangan Desa Wisata",
+    excerpt: "Kemenko PMK menyoroti Desa Nglanggeran sebagai model sukses tata kelola desa wisata berbasis komunitas. Keberhasilan ini dibuktikan melalui integrasi kearifan lokal dengan manajemen profesional yang mampu menggerakkan ekonomi warga.",
+    date: "12 Nov 2025",
+    readTime: "4 min",
+    image: "/artikel/artikel5.jpg",
+    url: "https://www.kemenkopmk.go.id/desa-nglanggeran-contoh-keberhasilan-pengembangan-desa-wisata?utm_source=chatgpt.com",
+    source: "Kemenko PMK"
+  },
+  {
+    category: "Berita & Update",
+    title: "BNI Perkuat Ekosistem Desa Melalui Digitalisasi BUMDes",
+    excerpt: "Melalui sinergi strategis, BNI terus mendorong transformasi digital di pedesaan dengan menyediakan layanan perbankan terintegrasi untuk memperkuat tata kelola keuangan BUMDes secara transparan dan akuntabel.",
+    date: "20 Jan 2026",
+    readTime: "4 min",
+    image: "/artikel/artikel6.jpeg",
+    url: "https://www.bni.co.id/id-id/beranda/kabar-bni/berita/articleid/25353?utm_source=chatgpt.com",
+    source: "Kabar BNI"
+  },
+  {
+    category: "Berita & Update",
+    title: "Desa Ponggok: Dari Desa Tertinggal Menjadi Desa Wisata Mandiri",
+    excerpt: "Kisah inspiratif transformasi Desa Ponggok yang berhasil mengelola potensi sumber daya air menjadi destinasi wisata unggulan. Keberhasilan ini membawa desa meraih kemandirian ekonomi berkelanjutan melalui pengelolaan BUMDes yang profesional.",
+    date: "10 Jan 2026",
+    readTime: "6 min",
+    image: "/artikel/artikel7.jpeg",
+    url: "https://www.kompas.tv/advertorial/619056/desa-ponggok-dari-tertinggal-jadi-desa-wisata-mandiri-berkelanjutan",
+    source: "Kompas TV"
+  },
+  {
+    category: "Berita & Update",
+    title: "Aksi Protes Jalan Rusak: Kades di Sragen Nekat Mandi Lumpur",
+    excerpt: "Sebagai bentuk protes karena jalan rusak yang tak kunjung diperbaiki, seorang Kepala Desa di Sragen melakukan aksi nekat mandi lumpur di jalan berlubang. Aksi ini menarik perhatian publik dan menjadi viral di media sosial.",
+    date: "14 Jan 2026",
+    readTime: "3 min",
+    image: "/artikel/artikel8.webp",
+    url: "https://kumparan.com/kumparannews/tak-kunjung-diperbaiki-kades-di-sragen-nekat-mandi-lumpur-di-jalan-berlubang-26ffp25eqkT",
+    source: "Kumparan News"
+  },
+  {
+    category: "Berita & Update",
+    title: "Terang di Titik Rawan: Aksi Nyata KKN 26 Desa Kalijurang Melalui Pemasangan Lampu Reflektor",
+    excerpt: "Sebagai bentuk protes karena jalan rusak yang tak kunjung diperbaiki, seorang Kepala Desa di Sragen melakukan aksi nekat mandi lumpur di jalan berlubang. Aksi ini menarik perhatian publik dan menjadi viral di media sosial.",
+    date: "14 Jan 2026",
+    readTime: "3 min",
+    image: "/artikel/artikel9.jpg",
+    url: "https://www.kompasiana.com/linaaahaerunnisa5337/699bac9bc925c44661345112/terang-di-titik-rawan-aksi-nyata-kkn-26-desa-kalijurang-melalui-pemasangan-lampu-reflektor",
+    source: "Kompasiana"
+  },
+];
 
 export default function ArtikelPage() {
-  const articles = [
-    {
-      category: "Berita & Update",
-      title: "Kades Cs Ramai-Ramai Demo di Dekat Monas, Teriak-Teriak Ini",
-      excerpt: "Ratusan kepala desa (kades) yang tergabung dalam berbagai asosiasi menggelar aksi unjuk rasa di kawasan Monas, Jakarta Pusat. Mereka menyuarakan aspirasi mendesak terkait revisi kebijakan operasional dan anggaran pembangunan desa untuk tahun anggaran 2026.",
-      date: "08 Des 2025",
-      readTime: "4 min",
-      image: "/artikel1.jpeg",
-      url: "https://www.cnbcindonesia.com/news/20251208134245-7-692082/kades-cs-ramai-ramai-demo-di-dekat-monas-teriak-teriak-ini",
-      source: "CNBC Indonesia"
-    },
-    {
-      category: "Berita & Update",
-      title: "Natadesa Meluncurkan Platform Bisnisdesa.id",
-      excerpt: "Guna mempercepat digitalisasi pedesaan, Natadesa resmi merilis Bisnisdesa.id, sebuah platform digital terpadu yang dirancang khusus untuk mengoptimalkan manajemen operasional BUMDes serta efisiensi tata kelola desa wisata secara nasional.",
-      date: "15 Jan 2026",
-      readTime: "5 min",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-      url: "https://bisnisdesa.id",
-      source: "Natadesa News"
-    },
-    {
-      category: "Berita & Update",
-      title: "Sukses Tingkatkan Kesejahteraan Warga, Desa Ponggok Jadi Inspirasi",
-      excerpt: "Platform digital terpadu untuk mendukung operasional BUMDes dan desa wisata di seluruh Indonesia melalui inspirasi keberhasilan pembangunan kawasan.",
-      date: "15 Jan 2026",
-      readTime: "5 min",
-      image: "/artikel2.jpg",
-      url: "https://www.transmigrasi.go.id/sukses-tingkatkan-kesejahteraan-warganya-desa-ponggok-jadi-inspirasi-pembangunan-kawasan-transmigrasi/?utm_source=chatgpt.com",
-      source: "Kemenaker"
-    },
-    {
-      category: "Berita & Update",
-      title: "Penglipuran Raih Penghargaan Best Tourism Village 2023 dari UNWTO",
-      excerpt: "Desa Wisata Penglipuran di Bali berhasil mengharumkan nama Indonesia dengan meraih penghargaan internasional sebagai salah satu desa wisata terbaik dunia versi UNWTO, mengungguli ribuan kandidat global lainnya.",
-      date: "19 Okt 2023",
-      readTime: "3 min",
-      image: "/artikel3.webp",
-      url: "https://www.antaranews.com/berita/3785523/penglipuran-raih-penghargaan-best-tourism-village-2023-dari-unwto?utm_source=chatgpt.com",
-      source: "Antara News"
-    },
-    {
-      category: "Berita & Update",
-      title: "Desa Nglanggeran: Contoh Keberhasilan Pengembangan Desa Wisata",
-      excerpt: "Kemenko PMK menyoroti Desa Nglanggeran sebagai model sukses tata kelola desa wisata berbasis komunitas. Keberhasilan ini dibuktikan melalui integrasi kearifan lokal dengan manajemen profesional yang mampu menggerakkan ekonomi warga.",
-      date: "12 Nov 2025",
-      readTime: "4 min",
-      image: "/artikel5.jpg",
-      url: "https://www.kemenkopmk.go.id/desa-nglanggeran-contoh-keberhasilan-pengembangan-desa-wisata?utm_source=chatgpt.com",
-      source: "Kemenko PMK"
-    },
-    {
-      category: "Berita & Update",
-      title: "BNI Perkuat Ekosistem Desa Melalui Digitalisasi BUMDes",
-      excerpt: "Melalui sinergi strategis, BNI terus mendorong transformasi digital di pedesaan dengan menyediakan layanan perbankan terintegrasi untuk memperkuat tata kelola keuangan BUMDes secara transparan dan akuntabel.",
-      date: "20 Jan 2026",
-      readTime: "4 min",
-      image: "/artikel6.jpeg",
-      url: "https://www.bni.co.id/id-id/beranda/kabar-bni/berita/articleid/25353?utm_source=chatgpt.com",
-      source: "Kabar BNI"
-    },
-    {
-      category: "Berita & Update",
-      title: "Desa Ponggok: Dari Desa Tertinggal Menjadi Desa Wisata Mandiri",
-      excerpt: "Kisah inspiratif transformasi Desa Ponggok yang berhasil mengelola potensi sumber daya air menjadi destinasi wisata unggulan. Keberhasilan ini membawa desa meraih kemandirian ekonomi berkelanjutan melalui pengelolaan BUMDes yang profesional.",
-      date: "10 Jan 2026",
-      readTime: "6 min",
-      image: "/artikel7.jpeg",
-      url: "https://www.kompas.tv/advertorial/619056/desa-ponggok-dari-tertinggal-jadi-desa-wisata-mandiri-berkelanjutan",
-      source: "Kompas TV"
-    },
-    {
-      category: "Berita & Update",
-      title: "Aksi Protes Jalan Rusak: Kades di Sragen Nekat Mandi Lumpur",
-      excerpt: "Sebagai bentuk protes karena jalan rusak yang tak kunjung diperbaiki, seorang Kepala Desa di Sragen melakukan aksi nekat mandi lumpur di jalan berlubang. Aksi ini menarik perhatian publik dan menjadi viral di media sosial.",
-      date: "14 Jan 2026",
-      readTime: "3 min",
-      image: "/artikel8.webp",
-      url: "https://kumparan.com/kumparannews/tak-kunjung-diperbaiki-kades-di-sragen-nekat-mandi-lumpur-di-jalan-berlubang-26ffp25eqkT",
-      source: "Kumparan News"
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(articles.length / ARTICLES_PER_PAGE);
+  const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+  const endIndex = startIndex + ARTICLES_PER_PAGE;
+  const currentArticles = articles.slice(startIndex, endIndex);
+
+  const goToPage = useCallback((page: number) => {
+    setCurrentPage(page);
+    // Scroll ke atas section artikel
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  const goToPrev = useCallback(() => {
+    if (currentPage > 1) goToPage(currentPage - 1);
+  }, [currentPage, goToPage]);
+
+  const goToNext = useCallback(() => {
+    if (currentPage < totalPages) goToPage(currentPage + 1);
+  }, [currentPage, totalPages, goToPage]);
+
+  // Generate array of page numbers to display
+  const getPageNumbers = () => {
+    const pages: (number | string)[] = [];
+    const maxVisible = 5;
+
+    if (totalPages <= maxVisible) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      // Always show first page
+      pages.push(1);
+
+      if (currentPage > 3) pages.push("...");
+
+      // Pages around current
+      const start = Math.max(2, currentPage - 1);
+      const end = Math.min(totalPages - 1, currentPage + 1);
+      for (let i = start; i <= end; i++) pages.push(i);
+
+      if (currentPage < totalPages - 2) pages.push("...");
+
+      // Always show last page
+      pages.push(totalPages);
     }
-  ];
+
+    return pages;
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -108,9 +171,16 @@ export default function ArtikelPage() {
         {/* Article Grid Section */}
         <section className="py-16">
           <div className="container max-w-7xl mx-auto px-6 lg:px-8">
+            {/* Info jumlah artikel */}
+            <div className="mb-8 flex items-center justify-between">
+              <p className="text-sm text-muted-foreground">
+                Menampilkan <span className="font-semibold text-foreground">{startIndex + 1}–{Math.min(endIndex, articles.length)}</span> dari <span className="font-semibold text-foreground">{articles.length}</span> artikel
+              </p>
+            </div>
+
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {articles.map((article, index) => (
-                <Link key={index} href={article.url} target="_blank" rel="noopener noreferrer">
+              {currentArticles.map((article, index) => (
+                <Link key={startIndex + index} href={article.url} target="_blank" rel="noopener noreferrer">
                   <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300 h-full border border-border/50 bg-card hover:-translate-y-2 flex flex-col">
                     {/* Image Layer */}
                     <div className="relative h-52 w-full overflow-hidden">
@@ -159,6 +229,58 @@ export default function ArtikelPage() {
                 </Link>
               ))}
             </div>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="mt-16 flex justify-center">
+                <nav className="inline-flex items-center gap-2" aria-label="Pagination">
+                  {/* Previous Button */}
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={goToPrev}
+                    disabled={currentPage === 1}
+                    aria-label="Halaman sebelumnya"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </Button>
+
+                  {/* Page Numbers */}
+                  {getPageNumbers().map((page, idx) =>
+                    page === "..." ? (
+                      <span
+                        key={`dots-${idx}`}
+                        className="inline-flex items-center justify-center w-9 h-9 text-sm text-muted-foreground select-none"
+                      >
+                        ···
+                      </span>
+                    ) : (
+                      <Button
+                        key={page}
+                        variant={currentPage === page ? "default" : "ghost"}
+                        size="icon"
+                        onClick={() => goToPage(page as number)}
+                        aria-label={`Halaman ${page}`}
+                        aria-current={currentPage === page ? "page" : undefined}
+                      >
+                        {page}
+                      </Button>
+                    )
+                  )}
+
+                  {/* Next Button */}
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={goToNext}
+                    disabled={currentPage === totalPages}
+                    aria-label="Halaman berikutnya"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                </nav>
+              </div>
+            )}
           </div>
         </section>
       </main>

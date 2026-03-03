@@ -150,7 +150,17 @@ const articles = [
     date: "14 Jan 2026",
     readTime: "3 min",
     image: "/artikel/artikel14.png",
-    url: "https://www.kompasiana.com/imtihanberin3971/69a46650ed641506713ba8d2/uang-desa-mengalir-ke-mana",
+    url: "https://www.kompasiana.com/rahmatapendi0404/69a0f1dfed64155e8d7ac6c2/saatnya-desa-berbenah-menuju-pelayanan-publik-yang-lebih-baik",
+    source: "Kompasiana"
+  },
+  {
+    category: "Berita & Update",
+    title: "Sosialisasi Keamanan Data Digital Bagi Perangkat Desa sebagai Upaya Peningkatan Literasi Digital dan Perlindungan Informasi Warga Desa Suka Cinta",
+    excerpt: "Pada hari Senin tanggal 19 Januari 2026, bertempat di Kantor Desa Suka Cinta, Kecamatan Sungai Rotan, Kabupaten Muara Enim telah dilaksanakan kegiatan  yang diselenggarakan oleh mahasiswa Kuliah Kerja Nyata (KKN) UIN Raden Fatah Palembang.",
+    date: "14 Jan 2026",
+    readTime: "3 min",
+    image: "/artikel/artikel15.png",
+    url: "https://www.kompasiana.com/dliigfrii13/699f0b6dc925c446d61cab82/sosialisasi-keamanan-data-digital-bagi-perangkat-desa-sebagai-upaya-peningkatan-literasi-digital-dan-perlindungan-informasi-warga-desa-suka-cinta",
     source: "Kompasiana"
   },
 ];

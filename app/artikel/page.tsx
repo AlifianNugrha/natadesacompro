@@ -96,11 +96,61 @@ const articles = [
   {
     category: "Berita & Update",
     title: "Terang di Titik Rawan: Aksi Nyata KKN 26 Desa Kalijurang Melalui Pemasangan Lampu Reflektor",
-    excerpt: "Sebagai bentuk protes karena jalan rusak yang tak kunjung diperbaiki, seorang Kepala Desa di Sragen melakukan aksi nekat mandi lumpur di jalan berlubang. Aksi ini menarik perhatian publik dan menjadi viral di media sosial.",
+    excerpt: "Keselamatan pengguna jalan merupakan salah satu aspek yang sangat penting dalam kehidupan masyarakat, khususnya di wilayah pedesaan yang masih memiliki keterbatasan penerangan jalan. Kondisi jalan yang gelap dan minim penanda sering kali menjadi faktor risiko terjadinya kecelakaan, terutama pada malam hari. Melihat kondisi tersebut, Mahasiswa KKN Kelompok 26 dari Universitas Peradaban melaksanakan program kerja berupa pemasangan lampu reflektor sebagai bentuk pengabdian kepada masyarakat di Desa Kalijurang",
     date: "14 Jan 2026",
     readTime: "3 min",
     image: "/artikel/artikel9.jpg",
     url: "https://www.kompasiana.com/linaaahaerunnisa5337/699bac9bc925c44661345112/terang-di-titik-rawan-aksi-nyata-kkn-26-desa-kalijurang-melalui-pemasangan-lampu-reflektor",
+    source: "Kompasiana"
+  },
+  {
+    category: "Berita & Update",
+    title: "Galeri UMKM Desa Lakardowo Langkah nyata pengabdian UMKM menggerakan Ekonomi Warga",
+    excerpt: "Program Galeri UMKM Desa Lakardowo yang dijalankan oleh tim Pengabdian Masyarakat Universitas Muhammadiyah Gresik (UMG) menjadi langkah konkret dalam mendorong transformasi ekonomi desa. Di bawah pendampingan Dosen Pembimbing Lapangan (DPL) Ibu Ratih Surkawi, S.H., M.H., mahasiswa tidak hanya melakukan pendataan dan kurasi produk, tetapi juga mengarahkan UMKM agar mampu bersaing di era digital.",
+    date: "14 Jan 2026",
+    readTime: "3 min",
+    image: "/artikel/artikel10.png",
+    url: "https://www.kompasiana.com/sabialusama5548/69a11660c925c406ab60d242/galeri-umkm-desa-lakardowo-langkah-nyata-pengabdian-umg-menggerakkan-ekonomi-warga",
+    source: "Kompasiana"
+  },
+  {
+    category: "Berita & Update",
+    title: "Sentuhan Kreatif yang Mengubah Jajanan Pasar Jadi Produk Bernilai Tinggi di Desa Tanjung Raya",
+    excerpt: "Di tengah hamparan perkebunan karet dan kelapa sawit yang menjadi denyut ekonomi masyarakat, Desa Tanjung Raya menyimpan potensi lain yang selama ini belum tergarap secara maksimal. Bukan tambang, bukan pula industri besar, melainkan dapur-dapur sederhana milik para ibu rumah tangga yang setiap hari memproduksi jajanan tradisional dengan cita rasa khas.",
+    date: "14 Jan 2026",
+    readTime: "3 min",
+    image: "/artikel/artikel11.png",
+    url: "https://www.kompasiana.com/tesa3175/69a5608bed64153e3c40f192/sentuhan-kreatif-yang-mengubah-jajanan-pasar-jadi-produk-bernilai-tinggi-di-desa-tanjung-raya",
+    source: "Kompasiana"
+  },
+  {
+    category: "Berita & Update",
+    title: "Di Balik Polemik Netizen atas Pernyataan Menteri Desa: Uang Desa Mengalir ke Mana?",
+    excerpt: "Polemik netizen terhadap pernyataan Menteri Desa dan Pembangunan Daerah Tertinggal, Yandri Susanto, tentang keberadaan ritel modern segera membelah ruang digital. Riuh itu bergerak cepat, sering kali lebih cepat daripada upaya memahami konteks yang melatarbelakanginya, sementara diskusi substantif kerap berhenti di permukaan",
+    date: "14 Jan 2026",
+    readTime: "3 min",
+    image: "/artikel/artikel12.png",
+    url: "https://www.kompasiana.com/imtihanberin3971/69a46650ed641506713ba8d2/uang-desa-mengalir-ke-mana",
+    source: "Kompasiana"
+  },
+  {
+    category: "Berita & Update",
+    title: "Perempuan Desa Air Keruh Melek Digital: Langkah Nyata Meningkatkan Ekonomi Keluarga Lewat Digital Marketing",
+    excerpt: "Di era digital saat ini, teknologi bukan lagi sekadar alat komunikasi, melainkan juga jembatan menuju peluang ekonomi yang lebih luas. Hal inilah yang menjadi semangat pelaksanaan program Kuliah Kerja Nyata (KKN) di Desa Air Keruh, yang berfokus pada pemberdayaan kaum perempuan melalui literasi digital marketing.",
+    date: "14 Jan 2026",
+    readTime: "3 min",
+    image: "/artikel/artikel13.png",
+    url: "https://www.kompasiana.com/imtihanberin3971/69a46650ed641506713ba8d2/uang-desa-mengalir-ke-mana",
+    source: "Kompasiana"
+  },
+  {
+    category: "Berita & Update",
+    title: "Saatnya Desa Berbenah, Menuju Pelayanan Publik Yang Lebih Baik",
+    excerpt: "Pelayanan publik merupakan wajah utama pemerintahan desa. Dari pelayanan administrasi kependudukan, surat menyurat, bantuan sosial, hingga pelayanan kemasyarakatan, semuanya menjadi tolok ukur kepuasan dan kepercayaan masyarakat terhadap pemerintah desa. Oleh karena itu, sudah saatnya desa berbenah demi mewujudkan pelayanan publik yang lebih baik, cepat, transparan, dan profesional.",
+    date: "14 Jan 2026",
+    readTime: "3 min",
+    image: "/artikel/artikel14.png",
+    url: "https://www.kompasiana.com/imtihanberin3971/69a46650ed641506713ba8d2/uang-desa-mengalir-ke-mana",
     source: "Kompasiana"
   },
 ];

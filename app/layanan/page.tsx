@@ -76,7 +76,7 @@ export default function LayananPage() {
     },
     {
       icon: Users,
-      title: "Peningkatan Kapasitas HR",
+      title: "Peningkatan Kapasitas ",
       tagline: "Pengembangan keterampilan untuk daya saing",
       description:
         "Program-program keterampilan teknis & non-teknis, pelatihan manajerial, dan literasi digital yang disesuaikan untuk usaha di daerah pedesaan",
@@ -134,7 +134,7 @@ export default function LayananPage() {
     },
     {
       icon: Laptop,
-      title: "Digitalisasi dan Teknologi",
+      title: "Produk Digital",
       tagline: "Alat untuk operasional yang transparan",
       description:
         "Situs web, media sosial, POS/ERP, dan marketplace melalui bisnisdesa.id untuk memungkinkan operasional yang efisien dalam kondisi konektivitas rendah",
@@ -220,7 +220,7 @@ export default function LayananPage() {
     },
     {
       icon: Briefcase,
-      title: "Bantuan Manajemen Bisnis",
+      title: "Platform Investasi",
       tagline: "Dari konsep hingga operasional",
       description: "Usaha pariwisata, agrowisata, kesehatan, budaya, dan lingkungan dengan panduan menyeluruh",
       businessPlanning: [

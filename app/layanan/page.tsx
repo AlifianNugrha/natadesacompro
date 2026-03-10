@@ -71,7 +71,8 @@ export default function LayananPage() {
         "Pokdarwis yang butuh arah strategis",
         "Pemerintah desa untuk perencanaan pembangunan",
       ],
-      cta: "Konsultasi Perencanaan Desa",
+      cta: "Konsultasi Perencanaan",
+      link: "#",
     },
     {
       icon: Users,
@@ -128,7 +129,8 @@ export default function LayananPage() {
         "UMKM pedesaan",
         "Dinas terkait di tingkat kabupaten",
       ],
-      cta: "Daftar Pelatihan",
+      cta: "Portal Pelatihan Natadesa",
+      link: "https://pelatihanbynatadesa.vercel.app/",
     },
     {
       icon: Laptop,
@@ -213,7 +215,8 @@ export default function LayananPage() {
         "Cloud-based dengan offline capability",
         "Affordable pricing untuk desa",
       ],
-      cta: "Demo Platform",
+      cta: "Akses Platform BUMDes",
+      link: "https://platformbumdes-natadesa.vercel.app/",
     },
     {
       icon: Briefcase,
@@ -283,7 +286,8 @@ export default function LayananPage() {
         { name: "Growth", desc: "Full setup + 6 bulan pendampingan" },
         { name: "Premium", desc: "Full management + ongoing support" },
       ],
-      cta: "Konsultasi Bisnis",
+      cta: "Kunjungi Bisnisdesa.id",
+      link: "https://bisnisdesa.id",
     },
   ]
 
@@ -672,7 +676,13 @@ export default function LayananPage() {
                       {/* Spacer pushed button to the bottom */}
                       <div className="mt-auto pt-4">
                         <Button className="w-full rounded-none" asChild>
-                          <Link href="/kontak">{service.cta} →</Link>
+                          <Link
+                            href={service.link || "/kontak"}
+                            target={service.link?.startsWith("http") ? "_blank" : undefined}
+                            rel={service.link?.startsWith("http") ? "noopener noreferrer" : undefined}
+                          >
+                            {service.cta} →
+                          </Link>
                         </Button>
                       </div>
                     </CardContent>

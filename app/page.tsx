@@ -424,9 +424,9 @@ export default function HomePage() {
             <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { title: "Rencana Jangka Panjang Desa", icon: FileText, desc: "Penyusunan masterplan dan strategi pengembangan desa wisata yang berkelanjutan.", delay: "d-1" },
-                { title: "Peningkatan Kapasitas HR", icon: GraduationCap, desc: "Pelatihan SDM desa dalam manajemen, pemasaran, dan operasional bisnis pariwisata.", delay: "d-2" },
-                { title: "Digitalisasi dan Teknologi", icon: Laptop, desc: "Implementasi sistem digital untuk reservasi, pembayaran, dan manajemen desa.", delay: "d-3" },
-                { title: "Bantuan Manajemen Bisnis", icon: Briefcase, desc: "Pendampingan dalam pengelolaan keuangan dan pengembangan produk wisata.", delay: "d-4" }
+                { title: "Peningkatan Kapasitas", icon: GraduationCap, desc: "Pelatihan SDM desa dalam manajemen, pemasaran, dan operasional bisnis pariwisata.", delay: "d-2" },
+                { title: "Produk Digital", icon: Laptop, desc: "Implementasi sistem digital untuk reservasi, pembayaran, dan manajemen desa.", delay: "d-3" },
+                { title: "Platform Investasi", icon: Briefcase, desc: "Pendampingan dalam pengelolaan keuangan dan pengembangan produk wisata.", delay: "d-4" }
               ].map((item, index) => (
                 <Card
                   key={index}
@@ -643,6 +643,7 @@ export default function HomePage() {
                     { name: "UNISA", src: "/UNISA.png" },
                     { name: "BUM Des Tirta Mandiri", src: "/TIRTAMANDIRI.png" },
                     { name: "Biofertilizer EXTRAGEN", src: "/EXTRAGEN.png" },
+                    { name: "Solo TechnoPark", src: "/solotech.JPG" },
                   ].map((client, i) => (
                     <div key={`r1-${i}`} className="mx-6 md:mx-12 flex flex-col items-center justify-center min-w-[100px] md:min-w-[140px]">
                       <div className="h-12 w-24 md:h-16 md:w-32 relative mb-2 flex items-center justify-center">
@@ -668,6 +669,7 @@ export default function HomePage() {
                     { name: "UNISA", src: "/UNISA.png" },
                     { name: "BUM Des Tirta Mandiri", src: "/TIRTAMANDIRI.png" },
                     { name: "Biofertilizer EXTRAGEN", src: "/EXTRAGEN.png" },
+                    { name: "Solo TechnoPark", src: "/solotech.JPG" },
                   ].map((client, i) => (
                     <div key={`r1-dup-${i}`} className="mx-6 md:mx-12 flex flex-col items-center justify-center min-w-[100px] md:min-w-[140px]">
                       <div className="h-12 w-24 md:h-16 md:w-32 relative mb-2 flex items-center justify-center">
